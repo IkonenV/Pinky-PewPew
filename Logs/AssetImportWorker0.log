@@ -7,9 +7,9 @@ Darwin version:          24.6.0
 Architecture:            x86_64
 Running under Rosetta:   NO
 Available memory:        16384 MB
-Date:                    2026-03-23T07:34:49Z
+Date:                    2026-03-23T07:43:51Z
 [Licensing::Module] Trying to connect to existing licensing client channel...
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-oppilas" at "2026-03-23T07:34:49.220825Z"
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-oppilas" at "2026-03-23T07:43:51.050029Z"
 
 COMMAND LINE ARGUMENTS:
 /Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/MacOS/Unity
@@ -19,11 +19,13 @@ COMMAND LINE ARGUMENTS:
 -name
 AssetImportWorker0
 -projectPath
-/Users/oppilas/Pinky PewPew_Project
+/Users/oppilas/Pinky-PewPew
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-49373
+49526
+-licensingIpc
+LicenseClient-oppilas
 -job-worker-count
 5
 -background-job-worker-count
@@ -31,8 +33,8 @@ Logs/AssetImportWorker0.log
 -gc-helper-count
 1
 -name AssetImport
-Successfully changed project path to: /Users/oppilas/Pinky PewPew_Project
-/Users/oppilas/Pinky PewPew_Project
+Successfully changed project path to: /Users/oppilas/Pinky-PewPew
+/Users/oppilas/Pinky-PewPew
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
     "memorysetup-allocator-temp-initial-block-size-main=262144"
     "memorysetup-allocator-temp-initial-block-size-worker=262144"
@@ -70,7 +72,7 @@ Successfully changed project path to: /Users/oppilas/Pinky PewPew_Project
     "memorysetup-temp-allocator-size-gfx=262144"
 Player connection [140704297500928]  Target information:
 
-Player connection [140704297500928]  * "[IP] 10.17.32.183 [Port] 0 [Flags] 2 [Guid] 3650655354 [EditorId] 3650655354 [Version] 1048832 [Id] OSXEditor(0,MuotSao-iMac-414-13.local) [Debug] 1 [PackageName] OSXEditor [ProjectName] Editor" 
+Player connection [140704297500928]  * "[IP] 10.17.32.183 [Port] 0 [Flags] 2 [Guid] 945577136 [EditorId] 945577136 [Version] 1048832 [Id] OSXEditor(0,MuotSao-iMac-414-13.local) [Debug] 1 [PackageName] OSXEditor [ProjectName] Editor" 
 
 Player connection [140704297500928] Host joined multi-casting on [225.0.0.222:54997]...
 Player connection [140704297500928] Host joined alternative multi-casting on [225.0.0.222:34997]...
@@ -85,11 +87,11 @@ Library Redirect Path: Library/
 [Physics::Module] SDK Version: 4.1.2
 [Physics::Module] Integration Version: 1.0.0
 [Physics::Module] Threading Mode: Multi-Threaded
-Refreshing native plugins compatible for Editor in 4.59 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 2.47 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 6000.3.2f1 (a9779f353c9b)
 [Subsystems] Discovering subsystems at path /Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path /Users/oppilas/Pinky PewPew_Project/Assets
+[Subsystems] Discovering subsystems at path /Users/oppilas/Pinky-PewPew/Assets
 GfxDevice: creating device client; kGfxThreadingModeNonThreaded
 iMac preferred device: AMD Radeon Pro 5300 (high power)
 Metal devices available: 1
@@ -106,13 +108,13 @@ Initialize mono
 Mono path[0] = '/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/Managed'
 Mono path[1] = '/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityjit-macos'
 Mono config path = '/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56069
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56768
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: /Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: /Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
 Register platform support module: /Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.003679 seconds.
+Registered in 0.001242 seconds.
 [Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 848, path: "/Applications/Unity Hub.app/Contents/Frameworks/UnityLicensingClient_V1.app/Contents/MacOS/Unity.Licensing.Client")
 [Licensing::Module] LicensingClient has failed validation; ignoring
 [Licensing::Client] Error: HandshakeResponse reported an error:
@@ -120,52 +122,52 @@ Registered in 0.003679 seconds.
 	ResponseStatus: Unsupported protocol version '1.17.4'.
 [Licensing::Module] Error: Failed to handshake to channel: "LicenseClient-oppilas"
 [Licensing::IpcConnector] LicenseClient-oppilas channel disconnected successfully.
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-oppilas-6000.3.2" at "2026-03-23T07:34:50.826556Z"
-[Licensing::Client] Code 1 while verifying Licensing Client signature (process Id: 1641, path: "/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Helpers/UnityLicensingClient.app/Contents/MacOS/Unity.Licensing.Client")
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-oppilas-6000.3.2" at "2026-03-23T07:43:52.507608Z"
+[Licensing::Client] Code 1 while verifying Licensing Client signature (process Id: 4373, path: "/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Helpers/UnityLicensingClient.app/Contents/MacOS/Unity.Licensing.Client")
 [Licensing::Module] LicensingClient has failed validation; ignoring
 [Licensing::Client] Handshaking with LicensingClient:
   Version:                 1.17.4+4293ba1
-  Session Id:              c18df475f1df4b0299a6cc05cdff308b
-  Correlation Id:          03b3155c924a81a9eaf85d3b6ee426d3
-  External correlation Id: 7938085565022878901
+  Session Id:              7ddeef89112348e2a5b4b4615ea453af
+  Correlation Id:          883d7f7a3d43e67b44a079d652750b7f
+  External correlation Id: 8605983166483652376
   Machine Id:              TfTeDfzMoii9qI+bAbmbOXVEpgM=
 [Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-oppilas-6000.3.2" (connect: 0.00s, validation: 0.00s, handshake: 0.02s)
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-oppilas-6000.3.2-notifications" at "2026-03-23T07:34:50.848871Z"
-[Licensing::Module] Licensing Background thread has ended after 1.63s
-- Loaded All Assemblies, in  0.620 seconds
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-oppilas-6000.3.2-notifications" at "2026-03-23T07:43:52.53578Z"
+[Licensing::Module] Licensing Background thread has ended after 1.49s
+- Loaded All Assemblies, in  0.712 seconds
 Native extension for WindowsStandalone target not found
 Native extension for OSXStandalone target not found
 Native extension for WebGL target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.636 seconds
-Domain Reload Profiling: 1257ms
-	BeginReloadAssembly (219ms)
+- Finished resetting the current domain, in  0.879 seconds
+Domain Reload Profiling: 1591ms
+	BeginReloadAssembly (177ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (57ms)
-	RebuildNativeTypeToScriptingClass (16ms)
-	initialDomainReloadingComplete (63ms)
-	LoadAllAssembliesAndSetupDomain (265ms)
-		LoadAssemblies (221ms)
+	RebuildCommonClasses (81ms)
+	RebuildNativeTypeToScriptingClass (23ms)
+	initialDomainReloadingComplete (77ms)
+	LoadAllAssembliesAndSetupDomain (354ms)
+		LoadAssemblies (176ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (259ms)
-			TypeCache.Refresh (256ms)
-				TypeCache.ScanAssembly (237ms)
+		AnalyzeDomain (347ms)
+			TypeCache.Refresh (343ms)
+				TypeCache.ScanAssembly (316ms)
 			BuildScriptInfoCaches (0ms)
 			ResolveRequiredComponents (1ms)
-	FinalizeReload (637ms)
+	FinalizeReload (880ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (577ms)
+		SetupLoadedEditorAssemblies (798ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (130ms)
-			SetLoadedEditorAssemblies (5ms)
-			BeforeProcessingInitializeOnLoad (156ms)
-			ProcessInitializeOnLoadAttributes (199ms)
-			ProcessInitializeOnLoadMethodAttributes (87ms)
+			InitializePlatformSupportModulesInManaged (121ms)
+			SetLoadedEditorAssemblies (7ms)
+			BeforeProcessingInitializeOnLoad (203ms)
+			ProcessInitializeOnLoadAttributes (322ms)
+			ProcessInitializeOnLoadMethodAttributes (144ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -181,8 +183,8 @@ Begin MonoManager ReloadAssembly
   Product: Unity Personal
   Type: ULF
   Expiration: Unlimited
-- Loaded All Assemblies, in  0.987 seconds
-Refreshing native plugins compatible for Editor in 0.33 ms, found 1 plugins.
+- Loaded All Assemblies, in  1.206 seconds
+Refreshing native plugins compatible for Editor in 0.47 ms, found 1 plugins.
 Native extension for WindowsStandalone target not found
 Native extension for OSXStandalone target not found
 Native extension for WebGL target not found
@@ -191,39 +193,39 @@ Package Manager log level set to [2]
 [Package Manager] Unable to send message (not connected to server process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.018 seconds
-Domain Reload Profiling: 2005ms
-	BeginReloadAssembly (194ms)
+- Finished resetting the current domain, in  1.664 seconds
+Domain Reload Profiling: 2870ms
+	BeginReloadAssembly (217ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (7ms)
+		DisableScriptedObjects (10ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (59ms)
-	RebuildCommonClasses (51ms)
-	RebuildNativeTypeToScriptingClass (16ms)
-	initialDomainReloadingComplete (42ms)
-	LoadAllAssembliesAndSetupDomain (682ms)
-		LoadAssemblies (453ms)
+		CreateAndSetChildDomain (61ms)
+	RebuildCommonClasses (72ms)
+	RebuildNativeTypeToScriptingClass (31ms)
+	initialDomainReloadingComplete (73ms)
+	LoadAllAssembliesAndSetupDomain (812ms)
+		LoadAssemblies (487ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (310ms)
-			TypeCache.Refresh (236ms)
-				TypeCache.ScanAssembly (214ms)
-			BuildScriptInfoCaches (52ms)
-			ResolveRequiredComponents (12ms)
-	FinalizeReload (1018ms)
+		AnalyzeDomain (413ms)
+			TypeCache.Refresh (303ms)
+				TypeCache.ScanAssembly (275ms)
+			BuildScriptInfoCaches (76ms)
+			ResolveRequiredComponents (20ms)
+	FinalizeReload (1664ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (765ms)
+		SetupLoadedEditorAssemblies (1241ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (14ms)
-			SetLoadedEditorAssemblies (4ms)
-			BeforeProcessingInitializeOnLoad (214ms)
-			ProcessInitializeOnLoadAttributes (449ms)
-			ProcessInitializeOnLoadMethodAttributes (82ms)
+			InitializePlatformSupportModulesInManaged (23ms)
+			SetLoadedEditorAssemblies (7ms)
+			BeforeProcessingInitializeOnLoad (385ms)
+			ProcessInitializeOnLoadAttributes (717ms)
+			ProcessInitializeOnLoadMethodAttributes (108ms)
 			AfterProcessingInitializeOnLoad (1ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (4ms)
+		AwakeInstancesAfterBackupRestoration (5ms)
 WARNING: Shader Unsupported: 'Universal Render Pipeline/VR/SpatialMapping/Wireframe' - All subshaders removed
 WARNING: Shader Did you use #pragma only_renderers and omit this platform?
 WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
@@ -231,75 +233,62 @@ WARNING: Shader Unsupported: 'Universal Render Pipeline/VR/SpatialMapping/Wirefr
 WARNING: Shader Did you use #pragma only_renderers and omit this platform?
 WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
 Launching external process: /Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Helpers/UnityShaderCompiler
-Launched and connected shader compiler UnityShaderCompiler after 0.08 seconds
-Refreshing native plugins compatible for Editor in 0.46 ms, found 1 plugins.
+Launched and connected shader compiler UnityShaderCompiler after 0.10 seconds
+Refreshing native plugins compatible for Editor in 0.41 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 17 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 6183 unused Assets / (3.5 MB). Loaded Objects now: 6997.
-Memory consumption went from 139.9 MB to 136.5 MB.
-Total: 12.147615 ms (FindLiveObjects: 0.985143 ms CreateObjectMapping: 1.404583 ms MarkObjects: 6.990900 ms  DeleteObjects: 2.765903 ms)
+Unloading 6183 unused Assets / (4.4 MB). Loaded Objects now: 6995.
+Memory consumption went from 139.6 MB to 135.2 MB.
+Total: 12.440702 ms (FindLiveObjects: 0.866684 ms CreateObjectMapping: 1.332181 ms MarkObjects: 7.401514 ms  DeleteObjects: 2.839019 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 1343.477866 seconds.
-  path: Assets/Readme.asset
-  artifactKey: Guid(8105016687592461f977c054a80ce2f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Readme.asset using Guid(8105016687592461f977c054a80ce2f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '50ea5ad2cda8720781b90d71f311d8d1') in 0.02654786 seconds
-Number of updated asset objects reloaded before import = 1Number of asset objects unloaded after import = 2
+  Time since last request: 1885.015304 seconds.
+  path: Assets/InputSystem_Actions.inputactions
+  artifactKey: Guid(052faaac586de48259a63d0c4782560b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/InputSystem_Actions.inputactions using Guid(052faaac586de48259a63d0c4782560b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '5437247d9bf590d88d3e72242f0ead95') in 0.266553849 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 22
 
 ========================================================================
 Received Import Request.
-  Time since last request: 2.473582 seconds.
-  path: Assets/Readme.asset
-  artifactKey: Guid(8105016687592461f977c054a80ce2f2) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Readme.asset using Guid(8105016687592461f977c054a80ce2f2) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'e33e468789fae7d912b63c7a4ad64c96') in 0.084344198 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000065 seconds.
-  path: Assets/TutorialInfo/Layout.wlt
-  artifactKey: Guid(eabc9546105bf4accac1fd62a63e88e6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/TutorialInfo/Layout.wlt using Guid(eabc9546105bf4accac1fd62a63e88e6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '77fe124a83d0876e64cb59bbe2010eeb') in 0.00210384 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000045 seconds.
-  path: Assets/Settings/PC_Renderer.asset
-  artifactKey: Guid(f288ae1f4751b564a96ac7587541f7a2) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Settings/PC_Renderer.asset using Guid(f288ae1f4751b564a96ac7587541f7a2) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '6c19fc1966ba198bff8678cf4e94e71b') in 0.051081007 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000065 seconds.
+  Time since last request: 0.000107 seconds.
   path: Assets/TutorialInfo/Scripts/Editor/ReadmeEditor.cs
   artifactKey: Guid(476cc7d7cd9874016adc216baab94a0a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/TutorialInfo/Scripts/Editor/ReadmeEditor.cs using Guid(476cc7d7cd9874016adc216baab94a0a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'eb1de104c838b897ef6d99c6868cfd52') in 0.008907872 seconds
+Start importing Assets/TutorialInfo/Scripts/Editor/ReadmeEditor.cs using Guid(476cc7d7cd9874016adc216baab94a0a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'a9d503a55ee857743b109c2b048b2c8a') in 0.024852406 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000054 seconds.
-  path: Assets/Settings/SampleSceneProfile.asset
-  artifactKey: Guid(10fc4df2da32a41aaa32d77bc913491c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Settings/SampleSceneProfile.asset using Guid(10fc4df2da32a41aaa32d77bc913491c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '2bcccd104a0d04fe6a47ec102cecaee0') in 0.003394548 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+  Time since last request: 0.000097 seconds.
+  path: Assets/TutorialInfo/Scripts/Readme.cs
+  artifactKey: Guid(fcf7219bab7fe46a1ad266029b2fee19) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/TutorialInfo/Scripts/Readme.cs using Guid(fcf7219bab7fe46a1ad266029b2fee19) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '6375a34e0f6b32c3dc4746955e7e2bce') in 0.002399521 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000051 seconds.
+  Time since last request: 0.000083 seconds.
   path: Assets/Settings/Mobile_RPAsset.asset
   artifactKey: Guid(5e6cbd92db86f4b18aec3ed561671858) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Settings/Mobile_RPAsset.asset using Guid(5e6cbd92db86f4b18aec3ed561671858) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'ae7025498b36f0900bf543cfe9953937') in 0.047793816 seconds
+Start importing Assets/Settings/Mobile_RPAsset.asset using Guid(5e6cbd92db86f4b18aec3ed561671858) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'b5022f74d4ee35932e07b08e094cbb16') in 0.060499039 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000052 seconds.
-  path: Assets/Settings/Mobile_Renderer.asset
-  artifactKey: Guid(65bc7dbf4170f435aa868c779acfb082) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Settings/Mobile_Renderer.asset using Guid(65bc7dbf4170f435aa868c779acfb082) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '15135aa60ec44e811f48f4578e2897e5') in 0.008795413 seconds
+  Time since last request: 0.000088 seconds.
+  path: Assets/Settings/PC_RPAsset.asset
+  artifactKey: Guid(4b83569d67af61e458304325a23e5dfd) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Settings/PC_RPAsset.asset using Guid(4b83569d67af61e458304325a23e5dfd) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '61f584c20d7b8f2fc913def43711cbb6') in 0.009630997 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000086 seconds.
+  path: Assets/Settings/Mobile_Renderer.asset
+  artifactKey: Guid(65bc7dbf4170f435aa868c779acfb082) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Settings/Mobile_Renderer.asset using Guid(65bc7dbf4170f435aa868c779acfb082) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '2e9649231971c7551ceb7db2b8f3eb43') in 0.041972402 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
