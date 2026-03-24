@@ -36,7 +36,8 @@ public class Shooting : MonoBehaviour
         {
             clickPosition = ray.GetPoint(distance);
         }
-        Vector3 bulletDirection = new Vector3(clickPosition.x - firePoint.position.x, 0f, clickPosition.z - firePoint.position.z);
+        //Vector3 bulletDirection = new Vector3(clickPosition.x - firePoint.position.x, 0f, clickPosition.z - firePoint.position.z);
+        Vector3 bulletDirection = clickPosition - firePoint.position;
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         bullet.GetComponent<Rigidbody>().AddForce(bulletDirection.normalized * fireForce, ForceMode.Impulse);
     }

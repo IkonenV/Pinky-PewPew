@@ -6,4 +6,12 @@ public class Bullet : MonoBehaviour
     {
         Destroy(gameObject);
     }
+    void Start()
+    {
+        DestroyTime();
+    }
+    void DestroyTime()
+    {
+        Destroy(gameObject, 5f);
+    }
 }

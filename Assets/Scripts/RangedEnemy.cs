@@ -4,13 +4,13 @@ using UnityEngine.AI;
 
 public class RangedEnemy : MonoBehaviour
 {
-    NavMeshAgent navAgent;
-    Transform playerTransform;
-    Transform firePoint;
-    GameObject projectilePrefab;
+    public NavMeshAgent navAgent;
+    public Transform playerTransform;
+    public Transform firePoint;
+    public GameObject projectilePrefab;
 
-    LayerMask terrainLayer;
-    LayerMask playerLayerMask;
+    public LayerMask terrainLayer;
+    public LayerMask playerLayerMask;
 
     public float patrolRadius = 10f;
     Vector3 currentPatrolPoint;
@@ -27,15 +27,38 @@ public class RangedEnemy : MonoBehaviour
     bool isPlayerVisible;
     bool isPlayerInRange;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void Awake()
     {
-        
+        if(playerTransform == null)
+        {
+            GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
+            if(playerObj != null)
+            {
+                playerTransform = playerObj.transform;
+            }
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        DetectPlayer();
+        UpdateBehaviourState();
+    }
+    void UpdateBehaviourState()
+    {
+        if(!isPlayerVisible && !isPlayerInRange)
+        {
+            PreformPatrol();
+        }
+        else if (isPlayerVisible && !isPlayerInRange)
+        {
+            PerformChase();
+        }
+        else if(isPlayerVisible && isPlayerInRange)
+        {
+            PerformAttack();
+        }
     }
 
     void DetectPlayer()
@@ -59,10 +82,43 @@ public class RangedEnemy : MonoBehaviour
 
         Vector3 potentialPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
 
-        if(Physics.Raycast(potentialPoint, -transform.up, 2f, groundLayer))
+        if(Physics.Raycast(potentialPoint, -transform.up, 2f, terrainLayer))
         {
             currentPatrolPoint = potentialPoint;
             hasPatrolPoint = true;
+        }
+    }
+    void PreformPatrol()
+    {
+        if (!hasPatrolPoint)
+        FindPatrolPoint();
+
+        if(hasPatrolPoint)
+        navAgent.SetDestination(currentPatrolPoint);
+
+        if(Vector3.Distance(transform.position, currentPatrolPoint) < 1f)
+        hasPatrolPoint = false;
+    }
+    void PerformChase()
+    {
+        if(playerTransform != null)
+        {
+            navAgent.SetDestination(playerTransform.position);
+        }
+    }
+    void PerformAttack()
+    {
+        navAgent.SetDestination(transform.position);
+
+        if(playerTransform != null)
+        {
+            transform.LookAt(playerTransform);
+
+            if (!isOnAttackCooldown)
+            {
+                FireProjectile();
+                StartCoroutine(AttackCooldownRoutine());
+            }
         }
     }
     private IEnumerator AttackCooldownRoutine()
