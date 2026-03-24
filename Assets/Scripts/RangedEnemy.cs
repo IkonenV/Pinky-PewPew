@@ -24,6 +24,8 @@ public class RangedEnemy : MonoBehaviour
     public float visionRange = 20f;
     public float engagementRange = 10f;
 
+
+
     bool isPlayerVisible;
     bool isPlayerInRange;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -127,4 +129,5 @@ public class RangedEnemy : MonoBehaviour
         yield return new WaitForSeconds(attackCooldown);
         isOnAttackCooldown = false;
     }
+
 }
