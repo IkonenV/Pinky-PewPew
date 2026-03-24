@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets/Scripts/RangedEnemy.cs" />
+    <Compile Include="Assets/Scripts/SpiderAttack.cs" />
     <Compile Include="Assets/Scripts/PlayerHealth.cs" />
     <Compile Include="Assets/Scripts/SoundMixerManager.cs" />
     <Compile Include="Assets/Scripts/HealthPack.cs" />
