@@ -4,6 +4,7 @@ public class HealthPack : MonoBehaviour
 {
 [Header("Pickup Settings")]
     public float healAmount = 34f;
+    public AudioClip healSoundClip;
    // public GameObject healthParticle;
 
     [Header("Hover Effect Settings")]
@@ -34,6 +35,7 @@ public class HealthPack : MonoBehaviour
             if (player != null)
             {
                 player.GetHealth(healAmount);
+                SoundFXManager.instance.PlaySoundFXClip(healSoundClip, transform, 1f);
                 Destroy(gameObject);
             }
         }

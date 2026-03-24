@@ -8,7 +8,8 @@ public class PlayerScore : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        scoreText = GameObject.FindGameObjectWithTag("ScoreText").GetComponent<TMP_Text>();
+        UpdateScore();
     }
 
     // Update is called once per frame
@@ -19,5 +20,10 @@ public class PlayerScore : MonoBehaviour
     public void GetScore(float gottenScore)
     {
         score += gottenScore;
+        UpdateScore();
+    }
+    public void UpdateScore()
+    {
+        scoreText.text = "Score: " + score;
     }
 }

@@ -3,7 +3,8 @@ using UnityEngine;
 public class ScorePack : MonoBehaviour
 {
     [Header("Pickup Settings")]
-    public int scoreValue = 100; 
+    public float scoreFrom = 1;
+    public AudioClip[] scoreSoundClips;
     //public GameObject collectParticle;
 
     [Header("Hover Effect Settings")]
@@ -31,7 +32,8 @@ public class ScorePack : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             PlayerScore playerScore = other.GetComponent<PlayerScore>();
-            
+            playerScore.GetScore(scoreFrom);
+            SoundFXManager.instance.PlayRandomSoundFXClip(scoreSoundClips, transform, 1f);
             Destroy(gameObject);
         }
     }
