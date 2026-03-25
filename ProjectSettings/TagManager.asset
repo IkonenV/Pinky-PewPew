@@ -8,6 +8,8 @@ TagManager:
   - HealthSlider
   - ScoreText
   - PauseMenu
+  - DeathMenu
+  - HighscoreText
   layers:
   - Default
   - TransparentFX

@@ -8,22 +8,34 @@ public class Shooting : MonoBehaviour
     public float fireDelay;
     private float delayTimer;
     Vector3 clickPosition;
+    Animator animator;
+    bool charging;
     
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
         delayTimer += Time.deltaTime;
-        if (Input.GetKeyDown(KeyCode.Mouse0) && delayTimer >= fireDelay)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && delayTimer >= fireDelay && !charging)
         {
             Fire();
             delayTimer = 0;
+        }
+        if (Input.GetKeyDown(KeyCode.Mouse1))
+        {
+            animator.SetBool("Charge", true);
+            charging = true;
+        }
+        if (Input.GetKeyUp(KeyCode.Mouse1))
+        {
+            animator.SetBool("Charge", false);
+            charging = false;
         }
     }
     public void Fire()
@@ -40,5 +52,11 @@ public class Shooting : MonoBehaviour
         Vector3 bulletDirection = clickPosition - firePoint.position;
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         bullet.GetComponent<Rigidbody>().AddForce(bulletDirection.normalized * fireForce, ForceMode.Impulse);
+    }
+    public void ChargedFire()
+    {
+        Fire();
+        animator.SetBool("Charge", false);
+        charging = false;
     }
 }

@@ -60,6 +60,7 @@
     <Compile Include="Assets/TutorialInfo/Scripts/Readme.cs" />
     <Compile Include="Assets/Scripts/SpiderBullet.cs" />
     <Compile Include="Assets/Scripts/SoundFXManager.cs" />
+    <Compile Include="Assets/Scripts/SpiderArmatureAttack.cs" />
     <Compile Include="Assets/Scripts/PlayerMovement.cs" />
     <Compile Include="Assets/Scripts/PlayerScore.cs" />
     <Compile Include="Assets/Scripts/EnemyHealth.cs" />

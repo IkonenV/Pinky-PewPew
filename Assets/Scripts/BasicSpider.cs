@@ -48,8 +48,7 @@ public class BasicSpider : MonoBehaviour
     }
     
 
-    public void StartAttack() => hitbox.StartAttack();
-    public void EndAttack() => hitbox.EndAttack();
+
     void UpdateBehaviourState()
     {
         if(!isPlayerVisible && !isPlayerInRange)

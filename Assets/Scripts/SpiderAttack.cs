@@ -9,7 +9,7 @@ public class SpiderAttack : MonoBehaviour
     public void StartAttack() => canDealDamage = true;
     public void EndAttack() => canDealDamage = false;
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (canDealDamage && other.CompareTag("Player"))
         {
