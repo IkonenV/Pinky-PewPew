@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="Assets/Scripts/RangedEnemy.cs" />
     <Compile Include="Assets/Scripts/SpiderAttack.cs" />
+    <Compile Include="Assets/Scripts/WaveSpawner.cs" />
     <Compile Include="Assets/Scripts/PlayerHealth.cs" />
     <Compile Include="Assets/Scripts/SoundMixerManager.cs" />
     <Compile Include="Assets/Scripts/HealthPack.cs" />
@@ -64,6 +65,7 @@
     <Compile Include="Assets/Scripts/PlayerMovement.cs" />
     <Compile Include="Assets/Scripts/PlayerScore.cs" />
     <Compile Include="Assets/Scripts/EnemyHealth.cs" />
+    <Compile Include="Assets/Scripts/GameManager.cs" />
     <Compile Include="Assets/Scripts/ScorePack.cs" />
     <Compile Include="Assets/Scripts/CameraController.cs" />
   </ItemGroup>

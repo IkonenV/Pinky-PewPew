@@ -19,6 +19,7 @@ public class BasicSpider : MonoBehaviour
     bool isOnAttackCooldown;
     public float visionRange = 20f;
     public float engagementRange = 10f; 
+    public bool hostile; 
 
 
 
@@ -27,6 +28,7 @@ public class BasicSpider : MonoBehaviour
 
     public SpiderAttack hitbox;
     public Animator animator;
+    EnemyHealth enemyHealth;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
@@ -38,6 +40,7 @@ public class BasicSpider : MonoBehaviour
                 playerTransform = playerObj.transform;
             }
         }
+        enemyHealth = GetComponent<EnemyHealth>();
     }
 
     // Update is called once per frame
@@ -45,21 +48,25 @@ public class BasicSpider : MonoBehaviour
     {
         DetectPlayer();
         UpdateBehaviourState();
+        if(enemyHealth.hostile == true && hostile == false)
+        {
+            hostile = true;
+        }
     }
     
 
 
     void UpdateBehaviourState()
     {
-        if(!isPlayerVisible && !isPlayerInRange)
+        if(!hostile)
         {
             PreformPatrol();
         }
-        else if (isPlayerVisible && !isPlayerInRange)
+        else if (hostile && !isPlayerInRange)
         {
             PerformChase();
         }
-        else if(isPlayerVisible && isPlayerInRange)
+        else if(hostile && isPlayerInRange)
         {
             PerformAttack();
         }

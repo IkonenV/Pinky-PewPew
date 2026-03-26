@@ -67,7 +67,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efa12538d30544598a70aa4c7c908d74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScorePack
-  scoreFrom: 1
+  scoreFrom: 200
   scoreSoundClips:
   - {fileID: 8300000, guid: 2371499e553f545798c0b17fdb7b9d33, type: 3}
   - {fileID: 8300000, guid: 1b5e1b165dd4a4a8984f8948662e818e, type: 3}

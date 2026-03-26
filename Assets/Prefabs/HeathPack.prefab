@@ -67,7 +67,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d6dc318ae6e94f72b3cc96140b3c53c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HealthPack
-  healAmount: 34
+  healAmount: 100
   healSoundClip: {fileID: 8300000, guid: aeb1a92aba0ac4c0f8473ea5653da7c3, type: 3}
   floatSpeed: 1
   floatHeight: 0.25
