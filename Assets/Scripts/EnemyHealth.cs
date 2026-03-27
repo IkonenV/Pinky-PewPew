@@ -4,10 +4,11 @@ public class EnemyHealth : MonoBehaviour
 {
     public float health = 100f;
     public bool hostile = false;
+    EnemyDrop enemyDrop;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        enemyDrop = GameObject.FindGameObjectWithTag("GameManager").GetComponent<EnemyDrop>();
     }
 
     // Update is called once per frame
@@ -25,6 +26,9 @@ public class EnemyHealth : MonoBehaviour
         health -= takenAmount;
         if(health <= 0)
         {
+            GameObject drop = enemyDrop.currentDrop;
+            Instantiate(drop, transform.position, Quaternion.identity);
+            enemyDrop.NextOnList();
             Destroy(gameObject);
             gameManager.destroyedEnemies += 1;
         }

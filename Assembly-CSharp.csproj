@@ -56,12 +56,16 @@
     <Compile Include="Assets/Scripts/HealthPack.cs" />
     <Compile Include="Assets/Scripts/BasicSpider.cs" />
     <Compile Include="Assets/Scripts/PauseMenu.cs" />
+    <Compile Include="Assets/Scripts/EnemyDrop.cs" />
+    <Compile Include="Assets/Scripts/BigSpiderAttack.cs" />
+    <Compile Include="Assets/Scripts/BigSpiderArmature.cs" />
     <Compile Include="Assets/Scripts/Shooting.cs" />
     <Compile Include="Assets/Scripts/Bullet.cs" />
     <Compile Include="Assets/TutorialInfo/Scripts/Readme.cs" />
     <Compile Include="Assets/Scripts/SpiderBullet.cs" />
     <Compile Include="Assets/Scripts/SoundFXManager.cs" />
     <Compile Include="Assets/Scripts/SpiderArmatureAttack.cs" />
+    <Compile Include="Assets/Scripts/BigSpider.cs" />
     <Compile Include="Assets/Scripts/PlayerMovement.cs" />
     <Compile Include="Assets/Scripts/PlayerScore.cs" />
     <Compile Include="Assets/Scripts/EnemyHealth.cs" />
