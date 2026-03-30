@@ -57,7 +57,7 @@ public class WaveSpawner : MonoBehaviour
             waveTimer -= Time.fixedDeltaTime;
         }
  
-        if(waveTimer<=0)
+        if(waveTimer<=0 || spawnedEnemies.Count == 0)
         {
             currWave++;
             GenerateWave();
@@ -69,7 +69,7 @@ public class WaveSpawner : MonoBehaviour
         waveValue = currWave * 10;
         GenerateEnemies();
  
-        spawnInterval = waveDuration / enemiesToSpawn.Count; // gives a fixed time between each enemies
+        spawnInterval = 20 / enemiesToSpawn.Count; // gives a fixed time between each enemies
         waveTimer = waveDuration; // wave duration is read only
     }
  
@@ -84,22 +84,23 @@ public class WaveSpawner : MonoBehaviour
         // repeat... 
  
         //  -> if we have no points left, leave the loop
- 
+
         List<GameObject> generatedEnemies = new List<GameObject>();
         while(waveValue>0 || generatedEnemies.Count <50)
         {
             int randEnemyId = Random.Range(0, enemies.Count);
             int randEnemyCost = enemies[randEnemyId].cost;
- 
+             waveValue -= randEnemyCost;
             if(waveValue-randEnemyCost>=0)
             {
                 generatedEnemies.Add(enemies[randEnemyId].enemyPrefab);
-                waveValue -= randEnemyCost;
+                
             }
             else if(waveValue<=0)
             {
                 break;
-            }
+            } 
+
         }
         enemiesToSpawn.Clear();
         enemiesToSpawn = generatedEnemies;

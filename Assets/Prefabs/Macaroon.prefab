@@ -52,7 +52,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 1b5e1b165dd4a4a8984f8948662e818e, type: 3}
   - {fileID: 8300000, guid: cdf648e6f3f3f43f1ba60debce9674bd, type: 3}
   floatSpeed: 2
-  floatHeight: 0.5
+  floatHeight: 0.25
   rotationSpeed: 0
 --- !u!65 &6418052633927424663
 BoxCollider:

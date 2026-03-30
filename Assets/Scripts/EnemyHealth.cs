@@ -27,7 +27,7 @@ public class EnemyHealth : MonoBehaviour
         if(health <= 0)
         {
             GameObject drop = enemyDrop.currentDrop;
-            Instantiate(drop, transform.position, Quaternion.identity);
+            Instantiate(drop, new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), Quaternion.identity);
             enemyDrop.NextOnList();
             Destroy(gameObject);
             gameManager.destroyedEnemies += 1;
