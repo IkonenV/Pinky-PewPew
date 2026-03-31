@@ -29,7 +29,7 @@ public class EnemyHealth : MonoBehaviour
         health -= takenAmount;
         if(health <= 0)
         {
-            SoundFXManager.instance.PlayRandomSoundFXClip(deathSounds, transform, 1f);
+            SoundFXManager.instance.PlayRandomSoundFXClip(deathSounds, transform, 0.2f);
             GameObject drop = enemyDrop.currentDrop;
             Instantiate(drop, new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), Quaternion.identity);
             enemyDrop.NextOnList();

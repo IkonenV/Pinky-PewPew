@@ -27,7 +27,7 @@ public class PlayerHealth : MonoBehaviour
     }
     public void TakeDamage(float takenAmount)
     {
-        SoundFXManager.instance.PlayRandomSoundFXClip(takeDamageSounds, transform, 0.3f);
+        SoundFXManager.instance.PlayRandomSoundFXClip(takeDamageSounds, transform, 0.2f);
         currentHealth -= takenAmount;
         healthSlider.value = currentHealth / 100;
         if(currentHealth <= 0)

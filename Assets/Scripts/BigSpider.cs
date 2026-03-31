@@ -26,9 +26,12 @@ public class BigSpider : MonoBehaviour
     bool isPlayerVisible;
     bool isPlayerInRange;
 
+    AudioSource audioSource;
+
     public BigSpiderAttack hitbox;
     public Animator animator;
     EnemyHealth enemyHealth;
+    bool playingWalkSound;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
@@ -41,6 +44,7 @@ public class BigSpider : MonoBehaviour
             }
         }
         enemyHealth = GetComponent<EnemyHealth>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -93,11 +97,15 @@ public class BigSpider : MonoBehaviour
     }
     void PreformPatrol()
     {
+
         if (!hasPatrolPoint)
         FindPatrolPoint();
 
         if(hasPatrolPoint)
         navAgent.SetDestination(currentPatrolPoint);
+
+        if(!playingWalkSound)
+        PlayWalk();
 
         if(Vector3.Distance(transform.position, currentPatrolPoint) < 1f)
         hasPatrolPoint = false;
@@ -108,14 +116,20 @@ public class BigSpider : MonoBehaviour
         {
             navAgent.SetDestination(playerTransform.position);
         }
+        if(!playingWalkSound)
+        PlayWalk();
     }
     void PerformAttack()
     {
         navAgent.SetDestination(transform.position);
+        playingWalkSound = false;
 
         if(playerTransform != null)
         {
             transform.LookAt(playerTransform);
+
+            if(playingWalkSound)
+            StopWalk();
 
             if (!isOnAttackCooldown)
             {
@@ -129,6 +143,16 @@ public class BigSpider : MonoBehaviour
         isOnAttackCooldown = true;
         yield return new WaitForSeconds(attackCooldown);
         isOnAttackCooldown = false;
+    }
+    public void PlayWalk()
+    {
+        audioSource.Play();
+        playingWalkSound = true;
+    }
+    public void StopWalk()
+    {
+        audioSource.Stop();
+        playingWalkSound = false;
     }
 
 }
