@@ -73,6 +73,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   health: 200
   hostile: 0
+  hurtSounds:
+  - {fileID: 8300000, guid: aeb1a92aba0ac4c0f8473ea5653da7c3, type: 3}
+  deathSounds:
+  - {fileID: 8300000, guid: abfc4c94b37ff4fd6b7b21f98410712e, type: 3}
+  - {fileID: 8300000, guid: 234a03cdd7f574da3b7b1210f6486b12, type: 3}
 --- !u!65 &6717545050749105629
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -189,6 +194,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BigSpiderAttack
   damage: 10
   knockbackForce: 5
+  bigBiteSound: {fileID: 8300000, guid: 855c368914946419d8fb9b7ffab87fac, type: 3}
 --- !u!1001 &3688735278364123562
 PrefabInstance:
   m_ObjectHideFlags: 0

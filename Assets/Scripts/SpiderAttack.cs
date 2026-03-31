@@ -5,8 +5,13 @@ public class SpiderAttack : MonoBehaviour
     public float damage = 10f;
     public float knockbackForce = 5f;
     private bool canDealDamage = false;
+    public AudioClip[] biteSounds;
 
-    public void StartAttack() => canDealDamage = true;
+    public void StartAttack()
+    {
+        canDealDamage = true;
+        SoundFXManager.instance.PlayRandomSoundFXClip(biteSounds, transform, 1f);
+    }
     public void EndAttack() => canDealDamage = false;
 
     private void OnTriggerStay(Collider other)

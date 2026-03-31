@@ -30,6 +30,7 @@ public class RangedEnemy : MonoBehaviour
     bool isPlayerVisible;
     bool isPlayerInRange;
     EnemyHealth enemyHealth;
+    public AudioClip[] shootingSounds;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
@@ -77,6 +78,7 @@ public class RangedEnemy : MonoBehaviour
     }
     void FireProjectile()
     {
+        SoundFXManager.instance.PlayRandomSoundFXClip(shootingSounds, transform, 1f);
         GameObject bullet = Instantiate(projectilePrefab, firePoint.position, Quaternion.identity);
         Rigidbody rb = bullet.GetComponent<Rigidbody>();
         rb.AddForce(transform.forward * forwardShotForce, ForceMode.Impulse);

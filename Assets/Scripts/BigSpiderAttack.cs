@@ -5,9 +5,15 @@ public class BigSpiderAttack : MonoBehaviour
     public float damage = 10f;
     public float knockbackForce = 5f;
     private bool canDealDamage = false;
+    public AudioClip bigBiteSound;
 
-    public void StartAttack() => canDealDamage = true;
+
+    public void StartAttack()
+    {
+        canDealDamage = true;
+    }
     public void EndAttack() => canDealDamage = false;
+    public void StartAttackSound() => SoundFXManager.instance.PlaySoundFXClip(bigBiteSound, transform, 1f);
 
     private void OnTriggerStay(Collider other)
     {

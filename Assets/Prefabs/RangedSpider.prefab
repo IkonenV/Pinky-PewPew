@@ -88,6 +88,9 @@ MonoBehaviour:
   visionRange: 10
   engagementRange: 5
   hostile: 1
+  shootingSounds:
+  - {fileID: 8300000, guid: d6d2d18de7b554d54b7d77874d58fee0, type: 3}
+  - {fileID: 8300000, guid: 6d83d2319d2ce4f3082ae10a5b280a6c, type: 3}
 --- !u!65 &3558915955931237080
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -123,6 +126,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   health: 100
   hostile: 0
+  hurtSounds:
+  - {fileID: 8300000, guid: d325f87420199498dae6abb1d6940e8e, type: 3}
+  - {fileID: 8300000, guid: 3429da5902a0643ed9281df928ecb3a7, type: 3}
+  - {fileID: 8300000, guid: 4d797fac2f7334d2290a7cae6e77998b, type: 3}
+  - {fileID: 8300000, guid: d9fe5e85b756c479a82dab7b03d883d1, type: 3}
+  - {fileID: 8300000, guid: be4cf15f07fff4391a642ff83a3b128d, type: 3}
+  deathSounds:
+  - {fileID: 8300000, guid: abfc4c94b37ff4fd6b7b21f98410712e, type: 3}
+  - {fileID: 8300000, guid: 234a03cdd7f574da3b7b1210f6486b12, type: 3}
 --- !u!1 &2783490895857674649
 GameObject:
   m_ObjectHideFlags: 0

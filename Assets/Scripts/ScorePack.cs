@@ -33,7 +33,7 @@ public class ScorePack : MonoBehaviour
         {
             PlayerScore playerScore = other.GetComponent<PlayerScore>();
             playerScore.GetScore(scoreFrom);
-            SoundFXManager.instance.PlayRandomSoundFXClip(scoreSoundClips, transform, 1f);
+            SoundFXManager.instance.PlayRandomSoundFXClip(scoreSoundClips, transform, 0.3f);
             Destroy(gameObject);
         }
     }

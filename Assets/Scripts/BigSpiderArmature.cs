@@ -6,5 +6,6 @@ public class BigSpiderArmature : MonoBehaviour
 
     public void StartAttack() => hitbox.StartAttack();
     public void EndAttack() => hitbox.EndAttack();
+    public void StartAttackSound() => hitbox.StartAttackSound();
 }
 

@@ -48,9 +48,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ScorePack
   scoreFrom: 400
   scoreSoundClips:
-  - {fileID: 8300000, guid: 2371499e553f545798c0b17fdb7b9d33, type: 3}
-  - {fileID: 8300000, guid: 1b5e1b165dd4a4a8984f8948662e818e, type: 3}
-  - {fileID: 8300000, guid: cdf648e6f3f3f43f1ba60debce9674bd, type: 3}
+  - {fileID: 8300000, guid: ca81fe59e6a63442a9b16625e8b5d9f2, type: 3}
+  - {fileID: 8300000, guid: aeef99b689fca40ee971bb5123a16871, type: 3}
+  - {fileID: 8300000, guid: 43a3759d4d005485fadcad1622461e26, type: 3}
+  - {fileID: 8300000, guid: 96b6d4fa53add41eb9e53957c7365d72, type: 3}
   floatSpeed: 1
   floatHeight: 0.25
   rotationSpeed: 0

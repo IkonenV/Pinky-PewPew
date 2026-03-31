@@ -5,6 +5,8 @@ public class EnemyHealth : MonoBehaviour
     public float health = 100f;
     public bool hostile = false;
     EnemyDrop enemyDrop;
+    public AudioClip[] hurtSounds;
+    public AudioClip[] deathSounds;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -23,9 +25,11 @@ public class EnemyHealth : MonoBehaviour
         {
             gameManager.TurnHostile();
         }
+        SoundFXManager.instance.PlayRandomSoundFXClip(hurtSounds, transform, 1f);
         health -= takenAmount;
         if(health <= 0)
         {
+            SoundFXManager.instance.PlayRandomSoundFXClip(deathSounds, transform, 1f);
             GameObject drop = enemyDrop.currentDrop;
             Instantiate(drop, new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), Quaternion.identity);
             enemyDrop.NextOnList();

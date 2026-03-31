@@ -9,6 +9,7 @@ public class PlayerHealth : MonoBehaviour
     public Slider healthSlider;
     public GameObject gameOverObj;
     PlayerScore playerScore;
+    public AudioClip[] takeDamageSounds;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -26,6 +27,7 @@ public class PlayerHealth : MonoBehaviour
     }
     public void TakeDamage(float takenAmount)
     {
+        SoundFXManager.instance.PlayRandomSoundFXClip(takeDamageSounds, transform, 0.3f);
         currentHealth -= takenAmount;
         healthSlider.value = currentHealth / 100;
         if(currentHealth <= 0)
