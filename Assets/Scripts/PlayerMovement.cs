@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody rb;
     Vector3 moveDirection;
     Vector3 mousePosition;
+    public Animator animator;
 
     void Start()
     {
@@ -28,7 +29,14 @@ public class PlayerMovement : MonoBehaviour
 
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         Plane plane = new Plane(Vector3.up, transform.position);
-
+        if (moveDirection.magnitude > 0.1f)
+        {
+            animator.SetBool("Moving", true);
+        }
+        else
+        {
+            animator.SetBool("Moving", false);
+        }
         if (plane.Raycast(ray, out float distance))
         {
             mousePosition = ray.GetPoint(distance);

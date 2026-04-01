@@ -8,14 +8,14 @@ public class Shooting : MonoBehaviour
     public float fireDelay;
     private float delayTimer;
     Vector3 clickPosition;
-    Animator animator;
+    public Animator animator;
     bool charging;
     
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        animator = GetComponent<Animator>();
+        
     }
 
     // Update is called once per frame
@@ -24,7 +24,7 @@ public class Shooting : MonoBehaviour
         delayTimer += Time.deltaTime;
         if (Input.GetKeyDown(KeyCode.Mouse0) && delayTimer >= fireDelay && !charging)
         {
-            Fire();
+            TriggerFire();
             delayTimer = 0;
         }
         if (Input.GetKeyDown(KeyCode.Mouse1))
@@ -40,7 +40,6 @@ public class Shooting : MonoBehaviour
     }
     public void Fire()
     {
-        
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         Plane plane = new Plane(Vector3.up, transform.position);
 
@@ -58,5 +57,9 @@ public class Shooting : MonoBehaviour
         Fire();
         animator.SetBool("Charge", false);
         charging = false;
+    }
+    public void TriggerFire()
+    {
+        animator.SetTrigger("Shoot");
     }
 }

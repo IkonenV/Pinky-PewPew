@@ -31,7 +31,7 @@ public class BigSpider : MonoBehaviour
     public BigSpiderAttack hitbox;
     public Animator animator;
     EnemyHealth enemyHealth;
-    bool playingWalkSound;
+    bool playingWalkSound = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {

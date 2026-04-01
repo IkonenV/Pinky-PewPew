@@ -179,6 +179,7 @@ MonoBehaviour:
   deathSounds:
   - {fileID: 8300000, guid: abfc4c94b37ff4fd6b7b21f98410712e, type: 3}
   - {fileID: 8300000, guid: 234a03cdd7f574da3b7b1210f6486b12, type: 3}
+  deathEffect: {fileID: 2153867101405061105, guid: 3b9628b01a2e3419cbbb4d918754e812, type: 3}
 --- !u!195 &9096205318386649610
 NavMeshAgent:
   m_ObjectHideFlags: 0

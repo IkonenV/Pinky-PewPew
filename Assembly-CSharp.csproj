@@ -54,6 +54,7 @@
     <Compile Include="Assets/Scripts/PlayerHealth.cs" />
     <Compile Include="Assets/Scripts/SoundMixerManager.cs" />
     <Compile Include="Assets/Scripts/HealthPack.cs" />
+    <Compile Include="Assets/Scripts/PlayerAnimation.cs" />
     <Compile Include="Assets/Scripts/BasicSpider.cs" />
     <Compile Include="Assets/Scripts/PauseMenu.cs" />
     <Compile Include="Assets/Scripts/EnemyDrop.cs" />
