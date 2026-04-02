@@ -8,6 +8,8 @@ public class EnemyHealth : MonoBehaviour
     public AudioClip[] hurtSounds;
     public AudioClip[] deathSounds;
     public GameObject deathEffect;
+    public Animator animator;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -26,6 +28,7 @@ public class EnemyHealth : MonoBehaviour
         {
             gameManager.TurnHostile();
         }
+        animator.SetTrigger("Hurt");
         SoundFXManager.instance.PlayRandomSoundFXClip(hurtSounds, transform, 1f);
         health -= takenAmount;
         if(health <= 0)
@@ -35,7 +38,9 @@ public class EnemyHealth : MonoBehaviour
             GameObject drop = enemyDrop.currentDrop;
             Instantiate(drop, new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), Quaternion.identity);
             enemyDrop.NextOnList();
-            Destroy(gameObject);
+            animator.SetTrigger("Death");
+            Destroy(gameObject, 0.49f);
+
             gameManager.destroyedEnemies += 1;
         }
     }

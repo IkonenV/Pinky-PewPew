@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class ScorePack : MonoBehaviour
@@ -11,13 +12,19 @@ public class ScorePack : MonoBehaviour
     public float floatSpeed = 2f;
     public float floatHeight = 0.5f;
     public float rotationSpeed = 50f;
+    public float invisibleBeforeSpawn;
+    MeshRenderer meshRenderer;
 
     private Vector3 startPosition;
 
     void Start()
     {
         startPosition = transform.position;
+        meshRenderer = GetComponentInChildren<MeshRenderer>();
+        //meshRenderer.enabled = false;
+        //StartCoroutine(InvisibleTime());
     }
+
 
     void Update()
     {
@@ -36,5 +43,10 @@ public class ScorePack : MonoBehaviour
             SoundFXManager.instance.PlayRandomSoundFXClip(scoreSoundClips, transform, 0.3f);
             Destroy(gameObject);
         }
+    }
+    public IEnumerator InvisibleTime()
+    {
+        yield return new WaitForSeconds(invisibleBeforeSpawn);
+        meshRenderer.enabled = true;
     }
 }
