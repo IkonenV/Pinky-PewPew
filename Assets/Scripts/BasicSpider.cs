@@ -20,6 +20,7 @@ public class BasicSpider : MonoBehaviour
     public float visionRange = 20f;
     public float engagementRange = 10f; 
     public bool hostile; 
+    bool stunned;
 
 
 
@@ -52,6 +53,10 @@ public class BasicSpider : MonoBehaviour
         {
             hostile = true;
         }
+        if(enemyHealth.Dead == true)
+        {
+            navAgent.destination = transform.position;
+        }
     }
     
 
@@ -62,11 +67,11 @@ public class BasicSpider : MonoBehaviour
         {
             PreformPatrol();
         }
-        else if (hostile && !isPlayerInRange)
+        else if (hostile && !isPlayerInRange && !stunned)
         {
             PerformChase();
         }
-        else if(hostile && isPlayerInRange)
+        else if(hostile && isPlayerInRange && !stunned)
         {
             PerformAttack();
         }
@@ -130,5 +135,15 @@ public class BasicSpider : MonoBehaviour
         yield return new WaitForSeconds(attackCooldown);
         isOnAttackCooldown = false;
     }
+    public void StopMoving()
+    {
+        stunned = true;
+        navAgent.destination = transform.position;
+    }
+    public void StartMoving()
+    {
+        stunned = false;
+    }
+
 
 }

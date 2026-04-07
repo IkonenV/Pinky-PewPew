@@ -81,6 +81,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 234a03cdd7f574da3b7b1210f6486b12, type: 3}
   deathEffect: {fileID: 2153867101405061105, guid: 3b9628b01a2e3419cbbb4d918754e812, type: 3}
   animator: {fileID: 2658041515642422061}
+  Dead: 0
 --- !u!65 &6717545050749105629
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -129,6 +130,7 @@ MonoBehaviour:
   hostile: 1
   hitbox: {fileID: 7867741576683836835}
   animator: {fileID: 2658041515642422061}
+  stunned: 0
 --- !u!82 &3769679653990219005
 AudioSource:
   m_ObjectHideFlags: 0
@@ -935,3 +937,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BigSpiderArmature
   hitbox: {fileID: 7867741576683836835}
+  bigSpider: {fileID: 2093953332604325946}

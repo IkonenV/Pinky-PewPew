@@ -88,6 +88,7 @@ MonoBehaviour:
   visionRange: 10
   engagementRange: 5
   hostile: 1
+  animator: {fileID: 5934856033001458921}
   shootingSounds:
   - {fileID: 8300000, guid: d6d2d18de7b554d54b7d77874d58fee0, type: 3}
   - {fileID: 8300000, guid: 6d83d2319d2ce4f3082ae10a5b280a6c, type: 3}
@@ -136,6 +137,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: abfc4c94b37ff4fd6b7b21f98410712e, type: 3}
   - {fileID: 8300000, guid: 234a03cdd7f574da3b7b1210f6486b12, type: 3}
   deathEffect: {fileID: 2153867101405061105, guid: 3b9628b01a2e3419cbbb4d918754e812, type: 3}
+  animator: {fileID: 5934856033001458921}
 --- !u!1 &2783490895857674649
 GameObject:
   m_ObjectHideFlags: 0
@@ -222,8 +224,38 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 017252c888e0d4b7e9a43ea7cec398ea, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5934856033001458921}
   m_SourcePrefab: {fileID: 100100000, guid: 017252c888e0d4b7e9a43ea7cec398ea, type: 3}
+--- !u!1 &1294396441292117418 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 017252c888e0d4b7e9a43ea7cec398ea, type: 3}
+  m_PrefabInstance: {fileID: 2105423365957363963}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &5934856033001458921
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1294396441292117418}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 23d1746fa7a59480197cf1ee193e26c4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!4 &1926782080756174608 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 017252c888e0d4b7e9a43ea7cec398ea, type: 3}

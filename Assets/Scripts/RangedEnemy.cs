@@ -24,6 +24,7 @@ public class RangedEnemy : MonoBehaviour
     public float visionRange = 20f;
     public float engagementRange = 10f;
     public bool hostile;
+    public Animator animator;
 
 
 
@@ -31,6 +32,7 @@ public class RangedEnemy : MonoBehaviour
     bool isPlayerInRange;
     EnemyHealth enemyHealth;
     public AudioClip[] shootingSounds;
+    public bool stunned;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
@@ -61,11 +63,11 @@ public class RangedEnemy : MonoBehaviour
         {
             PreformPatrol();
         }
-        else if (hostile && !isPlayerInRange)
+        else if (hostile && !isPlayerInRange && !stunned)
         {
             PerformChase();
         }
-        else if(hostile && isPlayerInRange)
+        else if(hostile && isPlayerInRange && !stunned)
         {
             PerformAttack();
         }
@@ -137,6 +139,15 @@ public class RangedEnemy : MonoBehaviour
         isOnAttackCooldown = true;
         yield return new WaitForSeconds(attackCooldown);
         isOnAttackCooldown = false;
+    }
+    public void StopMoving()
+    {
+        stunned = true;
+        navAgent.destination = transform.position;
+    }
+    public void StartMoving()
+    {
+        stunned = false;
     }
 
 }

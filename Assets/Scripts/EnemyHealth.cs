@@ -9,6 +9,7 @@ public class EnemyHealth : MonoBehaviour
     public AudioClip[] deathSounds;
     public GameObject deathEffect;
     public Animator animator;
+    public bool Dead;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -33,6 +34,7 @@ public class EnemyHealth : MonoBehaviour
         health -= takenAmount;
         if(health <= 0)
         {
+            Dead = true;
             SoundFXManager.instance.PlayRandomSoundFXClip(deathSounds, transform, 0.2f);
             Instantiate(deathEffect, transform.position, Quaternion.identity);
             GameObject drop = enemyDrop.currentDrop;

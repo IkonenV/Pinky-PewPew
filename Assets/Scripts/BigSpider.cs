@@ -32,6 +32,7 @@ public class BigSpider : MonoBehaviour
     public Animator animator;
     EnemyHealth enemyHealth;
     bool playingWalkSound = false;
+    public bool stunned;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
@@ -66,11 +67,11 @@ public class BigSpider : MonoBehaviour
         {
             PreformPatrol();
         }
-        else if (hostile && !isPlayerInRange)
+        else if (hostile && !isPlayerInRange && !stunned)
         {
             PerformChase();
         }
-        else if(hostile && isPlayerInRange)
+        else if(hostile && isPlayerInRange && !stunned)
         {
             PerformAttack();
         }
@@ -153,6 +154,15 @@ public class BigSpider : MonoBehaviour
     {
         audioSource.Stop();
         playingWalkSound = false;
+    }
+        public void StopMoving()
+    {
+        stunned = true;
+        navAgent.destination = transform.position;
+    }
+    public void StartMoving()
+    {
+        stunned = false;
     }
 
 }

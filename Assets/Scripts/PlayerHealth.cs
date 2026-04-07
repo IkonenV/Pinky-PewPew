@@ -50,10 +50,7 @@ public class PlayerHealth : MonoBehaviour
     }
     public void TryAgain()
     {
-        // 1. Get the current active scene
         Scene currentScene = SceneManager.GetActiveScene();
-
-        // 2. Load it again using its name or build index
         SceneManager.LoadScene(currentScene.name);
     }
 }
