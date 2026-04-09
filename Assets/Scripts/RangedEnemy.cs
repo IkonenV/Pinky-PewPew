@@ -78,7 +78,7 @@ public class RangedEnemy : MonoBehaviour
         isPlayerVisible = Physics.CheckSphere(transform.position, visionRange, playerLayerMask);
         isPlayerInRange = Physics.CheckSphere(transform.position, engagementRange, playerLayerMask);
     }
-    void FireProjectile()
+    public void FireProjectile()
     {
         SoundFXManager.instance.PlayRandomSoundFXClip(shootingSounds, transform, 1f);
         GameObject bullet = Instantiate(projectilePrefab, firePoint.position, Quaternion.identity);
@@ -129,8 +129,8 @@ public class RangedEnemy : MonoBehaviour
 
             if (!isOnAttackCooldown)
             {
-                FireProjectile();
                 StartCoroutine(AttackCooldownRoutine());
+                animator.SetTrigger("Shoot");
             }
         }
     }
