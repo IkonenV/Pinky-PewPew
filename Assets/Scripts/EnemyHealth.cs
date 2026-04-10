@@ -36,7 +36,8 @@ public class EnemyHealth : MonoBehaviour
         {
             Dead = true;
             SoundFXManager.instance.PlayRandomSoundFXClip(deathSounds, transform, 0.2f);
-            Instantiate(deathEffect, transform.position, Quaternion.identity);
+            GameObject effect = Instantiate(deathEffect, transform.position, Quaternion.identity);
+            Destroy(effect, 2f);
             GameObject drop = enemyDrop.currentDrop;
             Instantiate(drop, new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), Quaternion.identity);
             enemyDrop.NextOnList();

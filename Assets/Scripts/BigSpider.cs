@@ -57,6 +57,10 @@ public class BigSpider : MonoBehaviour
         {
             hostile = true;
         }
+        if(enemyHealth.Dead == true)
+        {
+            navAgent.destination = transform.position;
+        }
     }
     
 
