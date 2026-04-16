@@ -294,7 +294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 654a7a78f6f5e4c6b97ab52e64e8193a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BigSpiderAttack
-  damage: 10
+  damage: 3
   knockbackForce: 5
   bigBiteSound: {fileID: 8300000, guid: 855c368914946419d8fb9b7ffab87fac, type: 3}
 --- !u!1001 &5964956554077887692

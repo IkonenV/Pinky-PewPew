@@ -83,7 +83,7 @@ MonoBehaviour:
     m_Bits: 64
   patrolRadius: 10
   attackCooldown: 1
-  forwardShotForce: 10
+  forwardShotForce: 13
   verticalShotForce: 2
   visionRange: 10
   engagementRange: 5
@@ -112,8 +112,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.5967369, y: 0.4730503, z: 1.1355686}
-  m_Center: {x: -0.0305835, y: 0.26347485, z: -0.06778431}
+  m_Size: {x: 1.5967369, y: 0.598273, z: 1.1355686}
+  m_Center: {x: -0.0305835, y: 0.3260862, z: -0.06778431}
 --- !u!114 &4641877051041490103
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -66,7 +66,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e5b3e6f1135940eda5277bb9460e640, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpiderAttack
-  damage: 20
+  damage: 1
   knockbackForce: 0
   biteSounds:
   - {fileID: 8300000, guid: 1203cebce15164216a4ad250785d54d6, type: 3}
@@ -154,6 +154,7 @@ MonoBehaviour:
   visionRange: 10
   engagementRange: 1
   hostile: 1
+  biteForce: 100
   hitbox: {fileID: 3913361863333634263}
   animator: {fileID: 25030565170580002}
 --- !u!114 &3071563923575782678
@@ -192,10 +193,10 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.59
-  m_Speed: 5
+  m_Speed: 7
   m_Acceleration: 8
   avoidancePriority: 50
-  m_AngularSpeed: 120
+  m_AngularSpeed: 240
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1

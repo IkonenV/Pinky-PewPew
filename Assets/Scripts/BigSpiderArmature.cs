@@ -9,7 +9,6 @@ public class BigSpiderArmature : MonoBehaviour
     public void EndAttack() => hitbox.EndAttack();
     public void StartAttackSound() => hitbox.StartAttackSound();
 
-// laita animaatioon kun saat bigspider hurt animaation
     public void StartStun() => bigSpider.StopMoving();
     public void EndStun() => bigSpider.StartMoving();
 }

@@ -4,16 +4,19 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public float currentHealth = 100f;
-    public float maxHealth = 100f;
-    public Slider healthSlider;
+    public float currentHealth = 5f;
+    public float maxHealth = 5f;
     public GameObject gameOverObj;
     PlayerScore playerScore;
     public AudioClip[] takeDamageSounds;
+    public GameObject heart5;
+    public GameObject heart4;
+    public GameObject heart3;
+    public GameObject heart2;
+    public GameObject heart1;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        healthSlider = GameObject.FindGameObjectWithTag("HealthSlider").GetComponent<Slider>();
         gameOverObj = GameObject.FindGameObjectWithTag("DeathMenu");
         gameOverObj.SetActive(false);
         Time.timeScale = 1;
@@ -23,13 +26,59 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(currentHealth >= 5)
+        {
+            heart5.SetActive(true);
+            heart4.SetActive(true);
+            heart3.SetActive(true);
+            heart2.SetActive(true);
+            heart1.SetActive(true);
+        }
+        else if(currentHealth == 4)
+        {
+            heart5.SetActive(false);
+            heart4.SetActive(true);
+            heart3.SetActive(true);
+            heart2.SetActive(true);
+            heart1.SetActive(true);
+        }
+        else if(currentHealth == 3)
+        {
+            heart5.SetActive(false);
+            heart4.SetActive(false);
+            heart3.SetActive(true);
+            heart2.SetActive(true);
+            heart1.SetActive(true);
+        }
+        else if(currentHealth == 2)
+        {
+            heart5.SetActive(false);
+            heart4.SetActive(false);
+            heart3.SetActive(false);
+            heart2.SetActive(true);
+            heart1.SetActive(true);
+        }
+        else if(currentHealth == 1)
+        {
+            heart5.SetActive(false);
+            heart4.SetActive(false);
+            heart3.SetActive(false);
+            heart2.SetActive(false);
+            heart1.SetActive(true);
+        }
+        else if(currentHealth <= 0)
+        {
+            heart5.SetActive(false);
+            heart4.SetActive(false);
+            heart3.SetActive(false);
+            heart2.SetActive(false);
+            heart1.SetActive(false);
+        }
     }
     public void TakeDamage(float takenAmount)
     {
         SoundFXManager.instance.PlayRandomSoundFXClip(takeDamageSounds, transform, 0.2f);
         currentHealth -= takenAmount;
-        healthSlider.value = currentHealth / 100;
         if(currentHealth <= 0)
         {
             GameOver();
@@ -39,8 +88,6 @@ public class PlayerHealth : MonoBehaviour
     {
         currentHealth += gottenAmount;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
-        healthSlider.value = currentHealth / 100;
-        
     }
     public void GameOver()
     {

@@ -52,6 +52,7 @@
     <Compile Include="Assets/Scripts/SpiderAttack.cs" />
     <Compile Include="Assets/Scripts/WaveSpawner.cs" />
     <Compile Include="Assets/Scripts/PlayerHealth.cs" />
+    <Compile Include="Assets/Scripts/ParticleDestroy.cs" />
     <Compile Include="Assets/Scripts/SoundMixerManager.cs" />
     <Compile Include="Assets/Scripts/HealthPack.cs" />
     <Compile Include="Assets/Scripts/PlayerAnimation.cs" />

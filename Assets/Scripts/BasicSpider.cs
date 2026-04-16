@@ -21,6 +21,7 @@ public class BasicSpider : MonoBehaviour
     public float engagementRange = 10f; 
     public bool hostile; 
     bool stunned;
+    public float biteForce;
 
 
 
@@ -116,7 +117,7 @@ public class BasicSpider : MonoBehaviour
     }
     void PerformAttack()
     {
-        navAgent.SetDestination(transform.position);
+        //navAgent.SetDestination(transform.position);
 
         if(playerTransform != null)
         {
