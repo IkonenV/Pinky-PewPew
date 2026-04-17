@@ -14,6 +14,7 @@ public class PlayerHealth : MonoBehaviour
     public GameObject heart3;
     public GameObject heart2;
     public GameObject heart1;
+    public Animator animator;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -79,6 +80,7 @@ public class PlayerHealth : MonoBehaviour
     {
         SoundFXManager.instance.PlayRandomSoundFXClip(takeDamageSounds, transform, 0.2f);
         currentHealth -= takenAmount;
+        animator.SetTrigger("Hurt");
         if(currentHealth <= 0)
         {
             GameOver();

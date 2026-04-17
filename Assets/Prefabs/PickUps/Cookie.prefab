@@ -54,7 +54,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 43a3759d4d005485fadcad1622461e26, type: 3}
   - {fileID: 8300000, guid: 96b6d4fa53add41eb9e53957c7365d72, type: 3}
   floatSpeed: 2
-  floatHeight: 0
+  floatHeight: 0.57
   rotationSpeed: 50
   invisibleBeforeSpawn: 0
 --- !u!95 &2405420499275235604

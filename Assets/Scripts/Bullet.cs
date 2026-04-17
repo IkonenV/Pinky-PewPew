@@ -4,6 +4,7 @@ public class Bullet : MonoBehaviour
 {
     public float Damage;
     public ParticleSystem particleSystem1;
+    public GameObject deathEffect;
 
 
     void OnCollisionEnter(Collision collision)
@@ -15,6 +16,8 @@ public class Bullet : MonoBehaviour
 
         }
         DetachAll();  
+        GameObject effect = Instantiate(deathEffect, transform.position, Quaternion.identity);
+            Destroy(effect, 2f);
         Destroy(gameObject, 0.01f);
     }
     void Start()
@@ -28,14 +31,13 @@ public class Bullet : MonoBehaviour
 public void DetachAll()
 {
     // Etsii kaikki hiukkassysteemit tästä objektista ja sen lapsista
-    ParticleSystem[] allSystems = GetComponentsInChildren<ParticleSystem>();
+    Transform[] allGameobjects = gameObject.GetComponentsInChildren<Transform>();
 
-    foreach (var ps in allSystems)
+    foreach (var ps in allGameobjects)
     {
         ps.transform.parent = null; // Irrottaa jokaisen
-        var main = ps.main;
-        main.stopAction = ParticleSystemStopAction.Destroy;
-        ps.Stop();
+        ParticleSystem system1 = ps.GetComponent<ParticleSystem>();
+        system1.Stop();
     }
 }
 }
