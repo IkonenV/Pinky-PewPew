@@ -15,9 +15,10 @@ public class Bullet : MonoBehaviour
             enemyHealth.TakeDamage(Damage);
 
         }
-        DetachAll();  
+        DetachParticle(); 
+        DetachParticle2();
         GameObject effect = Instantiate(deathEffect, transform.position, Quaternion.identity);
-            Destroy(effect, 2f);
+        Destroy(effect, 2f);
         Destroy(gameObject, 0.01f);
     }
     void Start()
@@ -28,16 +29,36 @@ public class Bullet : MonoBehaviour
     {
         Destroy(gameObject, 5f);
     }
-public void DetachAll()
-{
-    // Etsii kaikki hiukkassysteemit tästä objektista ja sen lapsista
-    Transform[] allGameobjects = gameObject.GetComponentsInChildren<Transform>();
-
-    foreach (var ps in allGameobjects)
+    public void DetachAll()
     {
-        ps.transform.parent = null; // Irrottaa jokaisen
-        ParticleSystem system1 = ps.GetComponent<ParticleSystem>();
-        system1.Stop();
+        // Etsii kaikki hiukkassysteemit tästä objektista ja sen lapsista
+        Transform[] allGameobjects = gameObject.GetComponentsInChildren<Transform>();
+
+        foreach (var ps in allGameobjects)
+        {
+            ps.transform.parent = null; // Irrottaa jokaisen
+            ParticleSystem system1 = ps.GetComponent<ParticleSystem>();
+            system1.Stop();
+        }
     }
-}
+    public void DetachParticle()
+    {
+     GameObject particle = gameObject.transform.GetChild(0).gameObject;   
+     particle.GetComponent<ParticleSystem>().Stop();
+     Destroy(particle, 2f);
+     particle.transform.parent = null;
+     particle.transform.localScale = new Vector3(5,5,5);
+
+    }
+
+    public void DetachParticle2()
+    {
+     GameObject particle = gameObject.transform.GetChild(0).gameObject;   
+     particle.GetComponent<ParticleSystem>().Stop();
+     Destroy(particle, 2f);
+     particle.transform.parent = null;
+     particle.transform.localScale = new Vector3(1,1,1);
+
+    }
+
 }
