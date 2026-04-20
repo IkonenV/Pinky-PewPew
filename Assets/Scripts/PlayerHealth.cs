@@ -102,4 +102,8 @@ public class PlayerHealth : MonoBehaviour
         Scene currentScene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(currentScene.name);
     }
+    public void LoadMenu()
+    {
+        SceneManager.LoadScene("Menu");
+    }
 }
