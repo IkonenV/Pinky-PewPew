@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7598537484026857537}
   - component: {fileID: 1782822388188407653}
   - component: {fileID: 2607132605769423831}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,7 +102,7 @@ GameObject:
   - component: {fileID: 9188905845392853088}
   - component: {fileID: 3789654744797843186}
   - component: {fileID: 4525820290695940604}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -202,6 +202,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sparks
       objectReference: {fileID: 0}
+    - target: {fileID: 131998285595835868, guid: 9595fe13b3ebc4870bad317789d0e5ba, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5149294255694427835, guid: 9595fe13b3ebc4870bad317789d0e5ba, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -263,6 +267,10 @@ PrefabInstance:
     - target: {fileID: 2962707967627736228, guid: b80bd82b4148b4da4b00d15770c78e01, type: 3}
       propertyPath: m_Name
       value: ParticleTailMain
+      objectReference: {fileID: 0}
+    - target: {fileID: 2962707967627736228, guid: b80bd82b4148b4da4b00d15770c78e01, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4497040680494769698, guid: b80bd82b4148b4da4b00d15770c78e01, type: 3}
       propertyPath: m_LocalScale.x
