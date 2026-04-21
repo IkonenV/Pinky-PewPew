@@ -21,7 +21,7 @@ public class HealthPack : MonoBehaviour
 
     void Update()
     {
-        float newY = Mathf.Sin(Time.time * floatSpeed) * floatHeight;
+        float newY = (Mathf.Sin(Time.time * floatSpeed) + 1.0f) * 0.5f * floatHeight;
         transform.position = startPosition + new Vector3(0, newY, 0);
         transform.Rotate(Vector3.up * rotationSpeed * Time.deltaTime);
     }

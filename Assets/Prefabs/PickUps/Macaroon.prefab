@@ -26,7 +26,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8545992244370174427}
@@ -85,8 +85,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: aeef99b689fca40ee971bb5123a16871, type: 3}
   - {fileID: 8300000, guid: 43a3759d4d005485fadcad1622461e26, type: 3}
   - {fileID: 8300000, guid: 96b6d4fa53add41eb9e53957c7365d72, type: 3}
-  floatSpeed: 2
-  floatHeight: 0
+  floatSpeed: 2.5
+  floatHeight: 0.3
   rotationSpeed: 50
   invisibleBeforeSpawn: 0
 --- !u!95 &7058731211776693394
