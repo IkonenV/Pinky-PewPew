@@ -29,7 +29,7 @@ public class PlayerScore : MonoBehaviour
     }
     public void UpdateScore()
     {
-        scoreText.text = "Score: " + score;
+        scoreText.text = score.ToString();
     }
     public void GameOver()
     {

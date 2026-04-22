@@ -16,12 +16,16 @@ public class Shooting : MonoBehaviour
     bool charging;
     public ParticleSystem chargeParticles;
     public ParticleSystem chargeBloom;
+    public bool charged;
+    public GameObject chargedReadyBloom;
     
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        charged = false;
+        chargedReadyBloom.SetActive(false);
+
     }
 
     // Update is called once per frame
@@ -33,19 +37,21 @@ public class Shooting : MonoBehaviour
             TriggerFire();
             delayTimer = 0;
         }
-        if (Input.GetKeyDown(KeyCode.Mouse1))
+        if (Input.GetKeyDown(KeyCode.Mouse1) && charged)
         {
             animator.SetBool("Charge", true);
             charging = true;
             chargeParticles.Play();
             chargeBloom.Play();
+            chargedReadyBloom.SetActive(false);
         }
-        if (Input.GetKeyUp(KeyCode.Mouse1))
+        if (Input.GetKeyUp(KeyCode.Mouse1) && charged)
         {
             animator.SetBool("Charge", false);
             charging = false;
             chargeParticles.Stop();
             chargeBloom.Stop();
+            chargedReadyBloom.SetActive(true);
         }
     }
     public void Fire()
@@ -127,6 +133,7 @@ public class Shooting : MonoBehaviour
         Fire5();
         animator.SetBool("Charge", false);
         charging = false;
+        charged = false;
     }
     public void TriggerFire()
     {
