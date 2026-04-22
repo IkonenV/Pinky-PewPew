@@ -71,9 +71,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HealthPack
   healAmount: 100
   healSoundClip: {fileID: 8300000, guid: e853ef80457ce4d09ad2e0a2700149b8, type: 3}
-  floatSpeed: 2
-  floatHeight: 0
-  rotationSpeed: 0
+  floatSpeed: 2.5
+  floatHeight: 0.3
+  rotationSpeed: 50
 --- !u!65 &8170755108481142694
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -105,15 +105,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: a136d4167a948439ba7b829022ad79f8, type: 3}
       propertyPath: m_LocalScale.x
-      value: 30
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a136d4167a948439ba7b829022ad79f8, type: 3}
       propertyPath: m_LocalScale.y
-      value: 30
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a136d4167a948439ba7b829022ad79f8, type: 3}
       propertyPath: m_LocalScale.z
-      value: 30
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a136d4167a948439ba7b829022ad79f8, type: 3}
       propertyPath: m_LocalPosition.x
