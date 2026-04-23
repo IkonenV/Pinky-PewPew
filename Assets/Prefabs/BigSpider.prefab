@@ -73,7 +73,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d00fe5a8c6954ccc9563e41c4bf0bf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
-  health: 200
+  health: 140
   hostile: 0
   hurtSounds:
   - {fileID: 8300000, guid: aeb1a92aba0ac4c0f8473ea5653da7c3, type: 3}

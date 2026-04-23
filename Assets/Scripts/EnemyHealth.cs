@@ -24,6 +24,8 @@ public class EnemyHealth : MonoBehaviour
     }
      public void TakeDamage(float takenAmount)
     {
+        if (!Dead)
+        {
         GameManager gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         if (!hostile)
         {
@@ -39,13 +41,15 @@ public class EnemyHealth : MonoBehaviour
             GameObject effect = Instantiate(deathEffect, transform.position, Quaternion.identity);
             Destroy(effect, 2f);
             GameObject drop = enemyDrop.currentDrop;
-            Instantiate(drop, new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), Quaternion.identity);
+            Instantiate(drop, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
             enemyDrop.NextOnList();
             animator.SetTrigger("Death");
             Destroy(gameObject, 0.49f);
 
             gameManager.destroyedEnemies += 1;
+        }  
         }
+       
     }
       void OnDestroy()
     {

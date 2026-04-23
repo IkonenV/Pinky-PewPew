@@ -18,6 +18,8 @@ public class Shooting : MonoBehaviour
     public ParticleSystem chargeBloom;
     public bool charged;
     public GameObject chargedReadyBloom;
+    public AudioClip[] shootingSounds;
+    public AudioClip[] chargeShootingSounds;
     
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -54,6 +56,11 @@ public class Shooting : MonoBehaviour
             chargedReadyBloom.SetActive(true);
         }
     }
+    public void CollectStar()
+    {
+        charged = true;
+        chargedReadyBloom.SetActive(true);
+    }
     public void Fire()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -67,6 +74,7 @@ public class Shooting : MonoBehaviour
         //Vector3 bulletDirection = clickPosition - firePoint.position;
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         bullet.GetComponent<Rigidbody>().AddForce(firePoint.forward.normalized * fireForce, ForceMode.Impulse);
+        SoundFXManager.instance.PlayRandomSoundFXClip(shootingSounds,transform , 1f);
     }
     public void Fire2()
     {
@@ -134,6 +142,7 @@ public class Shooting : MonoBehaviour
         animator.SetBool("Charge", false);
         charging = false;
         charged = false;
+        SoundFXManager.instance.PlayRandomSoundFXClip(chargeShootingSounds, transform, 1f);
     }
     public void TriggerFire()
     {
