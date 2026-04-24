@@ -41,7 +41,7 @@ public class EnemyHealth : MonoBehaviour
             GameObject effect = Instantiate(deathEffect, transform.position, Quaternion.identity);
             Destroy(effect, 2f);
             GameObject drop = enemyDrop.currentDrop;
-            Instantiate(drop, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+            Instantiate(drop, new Vector3(transform.position.x, transform.position.y + 0.15f, transform.position.z), Quaternion.identity);
             enemyDrop.NextOnList();
             animator.SetTrigger("Death");
             Destroy(gameObject, 0.49f);
