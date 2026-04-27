@@ -20,6 +20,7 @@ public class Shooting : MonoBehaviour
     public GameObject chargedReadyBloom;
     public AudioClip[] shootingSounds;
     public AudioSource chargeSound;
+    public PauseMenu pauseMenu;
     
     
 
@@ -35,7 +36,7 @@ public class Shooting : MonoBehaviour
     void Update()
     {
         delayTimer += Time.deltaTime;
-        if (Input.GetKeyDown(KeyCode.Mouse0) && delayTimer >= fireDelay && !charging)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && delayTimer >= fireDelay && !charging && pauseMenu.paused==false)
         {
             TriggerFire();
             delayTimer = 0;

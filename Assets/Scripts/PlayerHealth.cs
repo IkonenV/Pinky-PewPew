@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -15,6 +16,7 @@ public class PlayerHealth : MonoBehaviour
     public GameObject heart2;
     public GameObject heart1;
     public Animator animator;
+    public AudioClip[] buttonSounds;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -96,14 +98,28 @@ public class PlayerHealth : MonoBehaviour
         Time.timeScale = 0;
         gameOverObj.SetActive(true);
         playerScore.GameOver();
+        //gameover sound?
     }
     public void TryAgain()
     {
-        Scene currentScene = SceneManager.GetActiveScene();
-        SceneManager.LoadScene(currentScene.name);
+        SoundFXManager.instance.PlayRandomSoundFXClip(buttonSounds, transform, 0.5f);
+        StartCoroutine(LoadGameDelay());
     }
     public void LoadMenu()
     {
+        SoundFXManager.instance.PlayRandomSoundFXClip(buttonSounds, transform, 0.5f);
+        StartCoroutine(LoadMenuDelay());
+    }
+    IEnumerator LoadMenuDelay()
+    {
+        yield return new WaitForSeconds(0.4f);
         SceneManager.LoadScene("Menu");
     }
+        IEnumerator LoadGameDelay()
+    {
+        yield return new WaitForSeconds(0.4f);
+        Scene currentScene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(currentScene.name);
+    }
+
 }

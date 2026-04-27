@@ -83,7 +83,7 @@ MonoBehaviour:
     m_Bits: 64
   patrolRadius: 10
   attackCooldown: 1
-  forwardShotForce: 13
+  forwardShotForce: 14.5
   verticalShotForce: 2
   visionRange: 10
   engagementRange: 5
