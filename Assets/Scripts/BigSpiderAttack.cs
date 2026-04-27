@@ -13,7 +13,7 @@ public class BigSpiderAttack : MonoBehaviour
         canDealDamage = true;
     }
     public void EndAttack() => canDealDamage = false;
-    public void StartAttackSound() => SoundFXManager.instance.PlaySoundFXClip(bigBiteSound, transform, 1f);
+    public void StartAttackSound() => SoundFXManager.instance.PlaySoundFXClip(bigBiteSound, transform, 0.5f);
 
     private void OnTriggerStay(Collider other)
     {

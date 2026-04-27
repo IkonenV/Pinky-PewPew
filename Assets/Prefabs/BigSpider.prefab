@@ -76,7 +76,9 @@ MonoBehaviour:
   health: 140
   hostile: 0
   hurtSounds:
-  - {fileID: 8300000, guid: aeb1a92aba0ac4c0f8473ea5653da7c3, type: 3}
+  - {fileID: 8300000, guid: 3e84c04facaed40f0bcb871229caa879, type: 3}
+  - {fileID: 8300000, guid: 40052c8aed1b047fbb7a60d94f7f0e03, type: 3}
+  - {fileID: 8300000, guid: 5e90bdfc6ceb94bc899a30dd7a0427d4, type: 3}
   deathSounds:
   - {fileID: 8300000, guid: abfc4c94b37ff4fd6b7b21f98410712e, type: 3}
   - {fileID: 8300000, guid: 234a03cdd7f574da3b7b1210f6486b12, type: 3}
@@ -328,7 +330,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BigSpiderAttack
   damage: 3
   knockbackForce: 5
-  bigBiteSound: {fileID: 8300000, guid: 855c368914946419d8fb9b7ffab87fac, type: 3}
+  bigBiteSound: {fileID: 8300000, guid: ecbd6116149fe4744a1e1f69bab480c6, type: 3}
 --- !u!1001 &5964956554077887692
 PrefabInstance:
   m_ObjectHideFlags: 0

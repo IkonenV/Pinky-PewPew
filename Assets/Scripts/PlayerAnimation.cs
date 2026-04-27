@@ -22,4 +22,17 @@ public Shooting shooting;
     {
         shooting.ChargedFire();
     }
+    public void AnimationBloom()
+    {
+        shooting.StartBloom();
+        shooting.StartChargeSound();
+    }
+    public void StartSound()
+    {
+        
+    }
+    public void StopSound()
+    {
+        
+    }
 }

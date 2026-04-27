@@ -19,7 +19,8 @@ public class Shooting : MonoBehaviour
     public bool charged;
     public GameObject chargedReadyBloom;
     public AudioClip[] shootingSounds;
-    public AudioClip[] chargeShootingSounds;
+    public AudioSource chargeSound;
+    
     
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -42,10 +43,6 @@ public class Shooting : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse1) && charged)
         {
             animator.SetBool("Charge", true);
-            charging = true;
-            chargeParticles.Play();
-            chargeBloom.Play();
-            chargedReadyBloom.SetActive(false);
         }
         if (Input.GetKeyUp(KeyCode.Mouse1) && charged)
         {
@@ -54,7 +51,23 @@ public class Shooting : MonoBehaviour
             chargeParticles.Stop();
             chargeBloom.Stop();
             chargedReadyBloom.SetActive(true);
+            StopChargeSound();
         }
+    }
+    public void StartBloom()
+    {
+        charging = true;
+        chargeParticles.Play();
+        chargeBloom.Play();
+        chargedReadyBloom.SetActive(false);
+    }
+    public void StartChargeSound()
+    {
+        chargeSound.Play();
+    }
+    public void StopChargeSound()
+    {
+        chargeSound.Stop();
     }
     public void CollectStar()
     {
@@ -142,7 +155,6 @@ public class Shooting : MonoBehaviour
         animator.SetBool("Charge", false);
         charging = false;
         charged = false;
-        SoundFXManager.instance.PlayRandomSoundFXClip(chargeShootingSounds, transform, 1f);
     }
     public void TriggerFire()
     {
