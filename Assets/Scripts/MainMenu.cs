@@ -14,13 +14,13 @@ public class MainMenu : MonoBehaviour
     {
         Time.timeScale = 1;
 
-        float masterV = PlayerPrefs.GetFloat("MasterVol", 0.75f);
+        float masterV = PlayerPrefs.GetFloat("MasterVol", 1f);
         audioMixer.SetFloat("masterVolume", Mathf.Log10(masterV) * 20f);
 
-        float musicV = PlayerPrefs.GetFloat("MusicVol", 0.75f);
+        float musicV = PlayerPrefs.GetFloat("MusicVol", 1f);
         audioMixer.SetFloat("musicVolume", Mathf.Log10(musicV) * 20f);
 
-        float soundFXV = PlayerPrefs.GetFloat("SoundFXVol", 0.75f);
+        float soundFXV = PlayerPrefs.GetFloat("SoundFXVol", 1f);
         audioMixer.SetFloat("soundFXVolume", Mathf.Log10(soundFXV) * 20f);
     }
 

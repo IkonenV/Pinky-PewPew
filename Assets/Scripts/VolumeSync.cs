@@ -8,7 +8,7 @@ public string parameterName;
 
     void Start()
     {
-        float savedValue = PlayerPrefs.GetFloat(parameterName, 0.75f);
+        float savedValue = PlayerPrefs.GetFloat(parameterName, 1f);
 
         if(slider != null)
         {
