@@ -80,7 +80,7 @@ public class RangedEnemy : MonoBehaviour
     }
     public void FireProjectile()
     {
-        SoundFXManager.instance.PlayRandomSoundFXClip(shootingSounds, transform, 0.5f);
+        SoundFXManager.instance.PlayRandomSoundFXClip(shootingSounds, transform, 0.25f);
         GameObject bullet = Instantiate(projectilePrefab, firePoint.position, Quaternion.identity);
         Rigidbody rb = bullet.GetComponent<Rigidbody>();
         rb.AddForce(transform.forward * forwardShotForce, ForceMode.Impulse);
