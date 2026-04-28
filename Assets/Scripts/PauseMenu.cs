@@ -55,7 +55,7 @@ public class PauseMenu : MonoBehaviour
     }
     IEnumerator ToMenuDelay()
     {
-        yield return new WaitForSeconds(0.4f);
+        yield return new WaitForSecondsRealtime(0.4f);
         SceneManager.LoadScene("Menu");
     }
 
