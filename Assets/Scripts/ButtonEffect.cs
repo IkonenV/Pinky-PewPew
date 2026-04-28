@@ -20,32 +20,25 @@ public class ButtonEffect : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
 
     void Update()
     {
-        // Muutetaan kokoa pehmeästi joka framessa
-        transform.localScale = Vector3.Lerp(transform.localScale, targetScale, Time.deltaTime * lerpSpeed);
+        transform.localScale = Vector3.Lerp(transform.localScale, targetScale, Time.unscaledDeltaTime * lerpSpeed);
     }
 
-    // Kun hiiri tulee napin päälle
     public void OnPointerEnter(PointerEventData eventData)
     {
         targetScale = initialScale * hoverScale;
     }
 
-    // Kun hiiri poistuu napin päältä
     public void OnPointerExit(PointerEventData eventData)
     {
         targetScale = initialScale;
     }
 
-    // Kun nappia painetaan (hiiri pohjassa)
     public void OnPointerDown(PointerEventData eventData)
     {
         targetScale = initialScale * clickScale;
     }
-
-    // Kun napista päästetään irti
     public void OnPointerUp(PointerEventData eventData)
     {
-        // Palataan joko hover-kokoon tai normaaliin riippuen onko hiiri vielä päällä
         if (eventData.hovered.Contains(gameObject))
             targetScale = initialScale * hoverScale;
         else
