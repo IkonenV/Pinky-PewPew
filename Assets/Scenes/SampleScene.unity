@@ -7704,6 +7704,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: f76005ce152e84b078648dc0a70dff4b, type: 3}
     - target: {fileID: 5626139649158013584, guid: 01619e4c5f85d42c5b16af99bfa0962b, type: 3}
+      propertyPath: wingSource
+      value: 
+      objectReference: {fileID: 481834734}
+    - target: {fileID: 5626139649158013584, guid: 01619e4c5f85d42c5b16af99bfa0962b, type: 3}
       propertyPath: gameOverObj
       value: 
       objectReference: {fileID: 1079648887}
