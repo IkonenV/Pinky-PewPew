@@ -17,6 +17,8 @@ public class PlayerHealth : MonoBehaviour
     public GameObject heart1;
     public Animator animator;
     public AudioClip[] buttonSounds;
+    public AudioClip loseSound;
+    public AudioSource wingSource;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -95,6 +97,8 @@ public class PlayerHealth : MonoBehaviour
     }
     public void GameOver()
     {
+        wingSource.Stop();
+        SoundFXManager.instance.PlaySoundFXClip(loseSound, transform, 1f);
         Time.timeScale = 0;
         gameOverObj.SetActive(true);
         playerScore.GameOver();

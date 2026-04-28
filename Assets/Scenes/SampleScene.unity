@@ -510,7 +510,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 7790754252918095605, guid: 4b159725a076e47989779c5c8a1ca1eb, type: 2}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: e7af918bdb6bc4d6eb0e453015621170, type: 3}
+  m_Resource: {fileID: 8300000, guid: a5517d28bbdcb42d4a8f1f3e98d7bf52, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.165
   m_Pitch: 1
@@ -4927,7 +4927,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: All
+  m_text: 'Master
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3105c8042c16f4ca38c491ba4e0d37f9, type: 2}
   m_sharedMaterial: {fileID: 6812569637820628523, guid: 3105c8042c16f4ca38c491ba4e0d37f9, type: 2}
@@ -7697,6 +7699,10 @@ PrefabInstance:
       propertyPath: heart5
       value: 
       objectReference: {fileID: 1693630885}
+    - target: {fileID: 5626139649158013584, guid: 01619e4c5f85d42c5b16af99bfa0962b, type: 3}
+      propertyPath: loseSound
+      value: 
+      objectReference: {fileID: 8300000, guid: f76005ce152e84b078648dc0a70dff4b, type: 3}
     - target: {fileID: 5626139649158013584, guid: 01619e4c5f85d42c5b16af99bfa0962b, type: 3}
       propertyPath: gameOverObj
       value: 
