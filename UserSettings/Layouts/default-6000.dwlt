@@ -304,8 +304,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "UnityEditor.MainToolbarWindow\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 317
-    y: 53
+    x: 0
+    y: 0
     width: 2243
     height: 36
   m_SerializedDataModeController:
@@ -584,8 +584,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Project\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 317
-    y: 962.5
+    x: 0
+    y: 897.5
     width: 1520
     height: 358.5
   m_SerializedDataModeController:
@@ -636,23 +636,22 @@ MonoBehaviour:
       m_Data: 53982
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 53754
-    - m_Data: 53756
-    - m_Data: 53758
-    - m_Data: 53760
-    - m_Data: 53762
-    - m_Data: 53764
-    - m_Data: 53766
-    - m_Data: 53768
-    - m_Data: 53770
-    - m_Data: 53772
-    - m_Data: 53774
-    - m_Data: 53776
-    - m_Data: 53778
-    - m_Data: 53780
-    - m_Data: 53782
-    - m_Data: 53784
-    - m_Data: 1000000000
+    - m_Data: 52898
+    - m_Data: 52900
+    - m_Data: 52902
+    - m_Data: 52904
+    - m_Data: 52906
+    - m_Data: 52908
+    - m_Data: 52910
+    - m_Data: 52912
+    - m_Data: 52914
+    - m_Data: 52916
+    - m_Data: 52918
+    - m_Data: 52920
+    - m_Data: 52922
+    - m_Data: 52924
+    - m_Data: 52926
+    - m_Data: 52928
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -685,22 +684,22 @@ MonoBehaviour:
       m_Data: 0
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 53754
-    - m_Data: 53756
-    - m_Data: 53758
-    - m_Data: 53760
-    - m_Data: 53762
-    - m_Data: 53764
-    - m_Data: 53766
-    - m_Data: 53768
-    - m_Data: 53770
-    - m_Data: 53772
-    - m_Data: 53774
-    - m_Data: 53776
-    - m_Data: 53778
-    - m_Data: 53780
-    - m_Data: 53782
-    - m_Data: 53784
+    - m_Data: 52898
+    - m_Data: 52900
+    - m_Data: 52902
+    - m_Data: 52904
+    - m_Data: 52906
+    - m_Data: 52908
+    - m_Data: 52910
+    - m_Data: 52912
+    - m_Data: 52914
+    - m_Data: 52916
+    - m_Data: 52918
+    - m_Data: 52920
+    - m_Data: 52922
+    - m_Data: 52924
+    - m_Data: 52926
+    - m_Data: 52928
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -804,8 +803,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Hierarchy\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 317
-    y: 89
+    x: 0
+    y: 24
     width: 320
     height: 847.5
   m_SerializedDataModeController:
@@ -824,10 +823,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs:
-      - m_Data: 469064
+      m_SelectedIDs: []
       m_LastClickedID:
-        m_Data: 469064
+        m_Data: 0
       m_ExpandedIDs:
       - m_Data: -543582
       - m_Data: -534998
@@ -881,8 +879,8 @@ MonoBehaviour:
       - m_Data: 468980
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: SoundFxVolume
-        m_OriginalName: SoundFxVolume
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
@@ -890,10 +888,10 @@ MonoBehaviour:
           width: 0
           height: 0
         m_UserData:
-          m_Data: -526502
+          m_Data: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 4
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_TrimLeadingAndTrailingWhitespace: 0
         m_ClientGUIView: {fileID: 8}
@@ -925,8 +923,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Scene\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 638
-    y: 89
+    x: 322
+    y: 24
     width: 1198
     height: 847.5
   m_SerializedDataModeController:
@@ -1605,7 +1603,7 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: 0.035395715, y: 0.017319063, z: -0.0006156312, w: 0.9992331}
     speed: 2
-    m_Value: {x: 0.03539536, y: 0.01731889, z: -0.000615625, w: 0.9992231}
+    m_Value: {x: -0.035395715, y: -0.017319063, z: 0.0006156312, w: -0.9992331}
   m_Size:
     m_Target: 2345.485
     speed: 2
@@ -2533,7 +2531,7 @@ MonoBehaviour:
     m_DynamicPanelBehavior: 0
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 219554
+  m_LastSelectedObjectID: 0
 --- !u!114 &21
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -2574,8 +2572,7 @@ MonoBehaviour:
     m_DynamicPanelBehavior: 0
   m_MixersTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs:
-    - m_Data: 46260
+    m_SelectedIDs: []
     m_LastClickedID:
       m_Data: 46260
     m_ExpandedIDs:
@@ -2746,8 +2743,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Inspector\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 1838
-    y: 89
+    x: 1522
+    y: 24
     width: 721
     height: 1232
   m_SerializedDataModeController:

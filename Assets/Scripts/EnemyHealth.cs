@@ -32,12 +32,12 @@ public class EnemyHealth : MonoBehaviour
             gameManager.TurnHostile();
         }
         animator.SetTrigger("Hurt");
-        SoundFXManager.instance.PlayRandomSoundFXClip(hurtSounds, transform, 1f);
+        SoundFXManager.instance.PlayRandomSoundFXClip(hurtSounds, transform, 0.5f);
         health -= takenAmount;
         if(health <= 0)
         {
             Dead = true;
-            SoundFXManager.instance.PlayRandomSoundFXClip(deathSounds, transform, 0.2f);
+            SoundFXManager.instance.PlayRandomSoundFXClip(deathSounds, transform, 0.1f);
             GameObject effect = Instantiate(deathEffect, transform.position, Quaternion.identity);
             Destroy(effect, 2f);
             GameObject drop = enemyDrop.currentDrop;

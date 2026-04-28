@@ -706,6 +706,7 @@ GameObject:
   m_Component:
   - component: {fileID: 463786811}
   - component: {fileID: 463786812}
+  - component: {fileID: 463786813}
   m_Layer: 5
   m_Name: MasterVolume
   m_TagString: Untagged
@@ -798,6 +799,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &463786813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 463786810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f4d00f3d96844ba2aa80d5d609f0b51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VolumeSync
+  slider: {fileID: 463786812}
+  parameterName: MasterVol
 --- !u!1 &501288994
 GameObject:
   m_ObjectHideFlags: 0
@@ -2647,6 +2662,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1132724728}
   - component: {fileID: 1132724729}
+  - component: {fileID: 1132724730}
   m_Layer: 5
   m_Name: SoundFxVolume
   m_TagString: Untagged
@@ -2739,6 +2755,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1132724730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1132724727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f4d00f3d96844ba2aa80d5d609f0b51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VolumeSync
+  slider: {fileID: 1132724729}
+  parameterName: SoundFXVol
 --- !u!1 &1144334544
 GameObject:
   m_ObjectHideFlags: 0
@@ -3458,6 +3488,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1418310082}
   - component: {fileID: 1418310083}
+  - component: {fileID: 1418310084}
   m_Layer: 5
   m_Name: MusicVolume
   m_TagString: Untagged
@@ -3550,6 +3581,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1418310084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1418310081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f4d00f3d96844ba2aa80d5d609f0b51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VolumeSync
+  slider: {fileID: 1418310083}
+  parameterName: MusicVol
 --- !u!1 &1517727726
 GameObject:
   m_ObjectHideFlags: 0
@@ -4258,12 +4303,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MainMenu
   buttonSounds:
-  - {fileID: 8300000, guid: ca81fe59e6a63442a9b16625e8b5d9f2, type: 3}
-  - {fileID: 8300000, guid: aeef99b689fca40ee971bb5123a16871, type: 3}
-  - {fileID: 8300000, guid: 43a3759d4d005485fadcad1622461e26, type: 3}
-  - {fileID: 8300000, guid: 96b6d4fa53add41eb9e53957c7365d72, type: 3}
+  - {fileID: 8300000, guid: 9c4064a8febac40108b608707c1c15cc, type: 3}
+  - {fileID: 8300000, guid: efa2a0fe0754643b2be09c5bfa1db9f0, type: 3}
+  - {fileID: 8300000, guid: c5dfa74d690f14abfbc3c939041c7e13, type: 3}
   settingsObject: {fileID: 316395401}
   menuObject: {fileID: 754324458}
+  audioMixer: {fileID: 24100000, guid: 4b159725a076e47989779c5c8a1ca1eb, type: 2}
 --- !u!114 &1948487555
 MonoBehaviour:
   m_ObjectHideFlags: 0

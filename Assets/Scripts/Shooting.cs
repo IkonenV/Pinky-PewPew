@@ -29,6 +29,7 @@ public class Shooting : MonoBehaviour
     {
         charged = false;
         chargedReadyBloom.SetActive(false);
+        chargeBloom.Stop();
 
     }
 
@@ -88,7 +89,7 @@ public class Shooting : MonoBehaviour
         //Vector3 bulletDirection = clickPosition - firePoint.position;
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         bullet.GetComponent<Rigidbody>().AddForce(firePoint.forward.normalized * fireForce, ForceMode.Impulse);
-        SoundFXManager.instance.PlayRandomSoundFXClip(shootingSounds,transform , 1f);
+        SoundFXManager.instance.PlayRandomSoundFXClip(shootingSounds,transform , 0.5f);
     }
     public void Fire2()
     {

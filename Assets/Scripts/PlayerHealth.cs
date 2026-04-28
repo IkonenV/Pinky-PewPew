@@ -112,12 +112,12 @@ public class PlayerHealth : MonoBehaviour
     }
     IEnumerator LoadMenuDelay()
     {
-        yield return new WaitForSeconds(0.4f);
+        yield return new WaitForSecondsRealtime(0.4f);
         SceneManager.LoadScene("Menu");
     }
         IEnumerator LoadGameDelay()
     {
-        yield return new WaitForSeconds(0.4f);
+        yield return new WaitForSecondsRealtime(0.4f);
         Scene currentScene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(currentScene.name);
     }
