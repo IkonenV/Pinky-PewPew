@@ -318,6 +318,7 @@ MonoBehaviour:
   Damage: 34
   particleSystem1: {fileID: 7857398246164832559}
   deathEffect: {fileID: 6873148190281587662, guid: df07ee36e54c84d88b253bbbc1a27c7e, type: 3}
+  deathSound: {fileID: 8300000, guid: db0af3f5da90d40538cc6152d9673363, type: 3}
 --- !u!1001 &22700363707079482
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -5,6 +5,7 @@ public class Bullet : MonoBehaviour
     public float Damage;
     public ParticleSystem particleSystem1;
     public GameObject deathEffect;
+    public AudioClip deathSound;
 
 
     void OnCollisionEnter(Collision collision)
@@ -15,6 +16,7 @@ public class Bullet : MonoBehaviour
             enemyHealth.TakeDamage(Damage);
 
         }
+        SoundFXManager.instance.PlaySoundFXClip(deathSound, transform, 1f);
         DetachParticle(); 
         DetachParticle2();
         GameObject effect = Instantiate(deathEffect, transform.position, Quaternion.identity);
