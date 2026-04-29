@@ -102,7 +102,6 @@ public class PlayerHealth : MonoBehaviour
         Time.timeScale = 0;
         gameOverObj.SetActive(true);
         playerScore.GameOver();
-        //gameover sound?
     }
     public void TryAgain()
     {

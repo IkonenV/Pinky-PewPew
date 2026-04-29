@@ -7,7 +7,10 @@ public class PlayerScore : MonoBehaviour
     private TMP_Text scoreText;
     public TMP_Text highscoreText;
     public TMP_Text scoreWasText;
+    public TMP_Text newHighScoreText;
     public GameObject highscoreObject;
+    public GameObject scoreObject;
+    public GameObject newHighScoreObject;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -38,9 +41,14 @@ public class PlayerScore : MonoBehaviour
         if(score > loadedHighscore)
         {
             PlayerPrefs.SetFloat("highScoreFloat", score);
-            scoreWasText.text = "New highscore: " + score;
+            newHighScoreObject.SetActive(true);
+            newHighScoreText.text = "New highscore: " + score;
             highscoreObject.SetActive(false);
+            scoreObject.SetActive(false);
         }
-        else scoreWasText.text = "Score: " + score;
+        else
+        {
+            scoreWasText.text = "Score: " + score;
+        }
     }
 }
