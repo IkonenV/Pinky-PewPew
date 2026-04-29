@@ -33,6 +33,8 @@ public class BigSpider : MonoBehaviour
     EnemyHealth enemyHealth;
     bool playingWalkSound = false;
     public bool stunned;
+    float patrolTimer;
+    public float maxPatrolTime = 5f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
@@ -87,34 +89,40 @@ public class BigSpider : MonoBehaviour
         isPlayerInRange = Physics.CheckSphere(transform.position, engagementRange, playerLayerMask);
     }
 
-    private void FindPatrolPoint()
+private void FindPatrolPoint()
+{
+    float randomX = Random.Range(-patrolRadius, patrolRadius);
+    float randomZ = Random.Range(-patrolRadius, patrolRadius);
+
+    Vector3 randomPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
+
+
+    UnityEngine.AI.NavMeshHit hit;
+    if (UnityEngine.AI.NavMesh.SamplePosition(randomPoint, out hit, 2f, UnityEngine.AI.NavMesh.AllAreas))
     {
-        float randomX = Random.Range(-patrolRadius, patrolRadius);
-        float randomZ = Random.Range(-patrolRadius, patrolRadius);
+        currentPatrolPoint = hit.position;
+        hasPatrolPoint = true;
+    }
+}
+void PreformPatrol()
+{
+    if (!hasPatrolPoint)
+    {
+        FindPatrolPoint();
+        patrolTimer = 0; 
+    }
 
-        Vector3 potentialPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
+    if(hasPatrolPoint)
+    {
+        navAgent.SetDestination(currentPatrolPoint);
+        patrolTimer += Time.deltaTime;
 
-        if(Physics.Raycast(potentialPoint, -transform.up, 2f, terrainLayer))
+        if(Vector3.Distance(transform.position, currentPatrolPoint) < 1.5f || patrolTimer > maxPatrolTime)
         {
-            currentPatrolPoint = potentialPoint;
-            hasPatrolPoint = true;
+            hasPatrolPoint = false;
         }
     }
-    void PreformPatrol()
-    {
-
-        if (!hasPatrolPoint)
-        FindPatrolPoint();
-
-        if(hasPatrolPoint)
-        navAgent.SetDestination(currentPatrolPoint);
-
-        if(!playingWalkSound)
-        PlayWalk();
-
-        if(Vector3.Distance(transform.position, currentPatrolPoint) < 1f)
-        hasPatrolPoint = false;
-    }
+}
     void PerformChase()
     {
         if(playerTransform != null)
