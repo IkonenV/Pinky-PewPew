@@ -131,10 +131,12 @@ MonoBehaviour:
   visionRange: 20
   engagementRange: 1.5
   hostile: 1
+  movementAudioSource: {fileID: 3769679653990219005}
+  walkPitchRange: 0.2
   hitbox: {fileID: 7867741576683836835}
   animator: {fileID: 8239369746987308217}
   stunned: 0
-  maxPatrolTime: 3.5
+  maxPatrolTime: 5
 --- !u!82 &3769679653990219005
 AudioSource:
   m_ObjectHideFlags: 0
@@ -144,11 +146,11 @@ AudioSource:
   m_GameObject: {fileID: 68178098397059929}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -3141360501417244787, guid: 4b159725a076e47989779c5c8a1ca1eb, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 386db468da06d48ba85bb2bfd677edd9, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 0
+  m_PlayOnAwake: 1
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -192,7 +194,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0

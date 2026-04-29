@@ -26,7 +26,8 @@ public class BigSpider : MonoBehaviour
     bool isPlayerVisible;
     bool isPlayerInRange;
 
-    AudioSource audioSource;
+    public AudioSource movementAudioSource;
+    public float walkPitchRange = 0.2f;
 
     public BigSpiderAttack hitbox;
     public Animator animator;
@@ -47,7 +48,6 @@ public class BigSpider : MonoBehaviour
             }
         }
         enemyHealth = GetComponent<EnemyHealth>();
-        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -55,6 +55,7 @@ public class BigSpider : MonoBehaviour
     {
         DetectPlayer();
         UpdateBehaviourState();
+        HandleMovementSound();
         if(enemyHealth.hostile == true && hostile == false)
         {
             hostile = true;
@@ -82,6 +83,27 @@ public class BigSpider : MonoBehaviour
             PerformAttack();
         }
     }
+    void HandleMovementSound()
+{
+    if (movementAudioSource == null) return;
+
+    if (navAgent.velocity.sqrMagnitude > 0.1f && !stunned && enemyHealth.Dead == false)
+    {
+        if (!movementAudioSource.isPlaying)
+        {
+            movementAudioSource.Play();
+        }
+        
+         movementAudioSource.volume = Mathf.Lerp(0, 1, navAgent.velocity.magnitude / navAgent.speed);
+    }
+    else
+    {
+        if (movementAudioSource.isPlaying)
+        {
+            movementAudioSource.Stop();
+        }
+    }
+}
 
     void DetectPlayer()
     {
@@ -91,33 +113,39 @@ public class BigSpider : MonoBehaviour
 
 private void FindPatrolPoint()
 {
-    float randomX = Random.Range(-patrolRadius, patrolRadius);
-    float randomZ = Random.Range(-patrolRadius, patrolRadius);
-
-    Vector3 randomPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
-
+    Vector3 randomDirection = Random.insideUnitSphere * patrolRadius;
+    randomDirection += transform.position;
 
     UnityEngine.AI.NavMeshHit hit;
-    if (UnityEngine.AI.NavMesh.SamplePosition(randomPoint, out hit, 2f, UnityEngine.AI.NavMesh.AllAreas))
+    
+
+    if (UnityEngine.AI.NavMesh.SamplePosition(randomDirection, out hit, 5f, UnityEngine.AI.NavMesh.AllAreas))
     {
         currentPatrolPoint = hit.position;
         hasPatrolPoint = true;
+        patrolTimer = 0; 
     }
 }
+
 void PreformPatrol()
 {
     if (!hasPatrolPoint)
     {
         FindPatrolPoint();
-        patrolTimer = 0; 
+        return;
     }
 
-    if(hasPatrolPoint)
+    if (hasPatrolPoint)
     {
         navAgent.SetDestination(currentPatrolPoint);
         patrolTimer += Time.deltaTime;
 
-        if(Vector3.Distance(transform.position, currentPatrolPoint) < 1.5f || patrolTimer > maxPatrolTime)
+        float distanceToTarget = Vector3.Distance(transform.position, currentPatrolPoint);
+
+
+        bool isStuck = (navAgent.velocity.sqrMagnitude < 0.1f && patrolTimer > 1.0f);
+
+        if (distanceToTarget < 1.5f || patrolTimer > maxPatrolTime || isStuck)
         {
             hasPatrolPoint = false;
         }
@@ -129,8 +157,6 @@ void PreformPatrol()
         {
             navAgent.SetDestination(playerTransform.position);
         }
-        if(!playingWalkSound)
-        PlayWalk();
     }
     void PerformAttack()
     {
@@ -142,7 +168,6 @@ void PreformPatrol()
             transform.LookAt(playerTransform);
 
             if(playingWalkSound)
-            StopWalk();
 
             if (!isOnAttackCooldown)
             {
@@ -156,16 +181,6 @@ void PreformPatrol()
         isOnAttackCooldown = true;
         yield return new WaitForSeconds(attackCooldown);
         isOnAttackCooldown = false;
-    }
-    public void PlayWalk()
-    {
-        audioSource.Play();
-        playingWalkSound = true;
-    }
-    public void StopWalk()
-    {
-        audioSource.Stop();
-        playingWalkSound = false;
     }
         public void StopMoving()
     {

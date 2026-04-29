@@ -34,6 +34,8 @@ public class BasicSpider : MonoBehaviour
 
     float patrolTimer;
     public float maxPatrolTime = 5f;
+    public AudioSource movementAudioSource;
+    public float walkPitchRange = 0.2f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
@@ -53,6 +55,7 @@ public class BasicSpider : MonoBehaviour
     {
         DetectPlayer();
         UpdateBehaviourState();
+        HandleMovementSound();
         if(enemyHealth.hostile == true && hostile == false)
         {
             hostile = true;
@@ -80,6 +83,28 @@ public class BasicSpider : MonoBehaviour
             PerformAttack();
         }
     }
+    void HandleMovementSound()
+{
+    if (movementAudioSource == null) return;
+
+    if (navAgent.velocity.sqrMagnitude > 0.1f && !stunned && enemyHealth.Dead == false)
+    {
+        // Jos ääni ei vielä soi, laitetaan se päälle
+        if (!movementAudioSource.isPlaying)
+        {
+            movementAudioSource.Play();
+        }
+        
+        movementAudioSource.volume = Mathf.Lerp(0, 1, navAgent.velocity.magnitude / navAgent.speed);
+    }
+    else
+    {
+        if (movementAudioSource.isPlaying)
+        {
+            movementAudioSource.Stop();
+        }
+    }
+}
 
     void DetectPlayer()
     {
@@ -89,32 +114,39 @@ public class BasicSpider : MonoBehaviour
 
 private void FindPatrolPoint()
 {
-    float randomX = Random.Range(-patrolRadius, patrolRadius);
-    float randomZ = Random.Range(-patrolRadius, patrolRadius);
-
-    Vector3 randomPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
+    Vector3 randomDirection = Random.insideUnitSphere * patrolRadius;
+    randomDirection += transform.position;
 
     UnityEngine.AI.NavMeshHit hit;
-    if (UnityEngine.AI.NavMesh.SamplePosition(randomPoint, out hit, 2f, UnityEngine.AI.NavMesh.AllAreas))
+    
+
+    if (UnityEngine.AI.NavMesh.SamplePosition(randomDirection, out hit, 5f, UnityEngine.AI.NavMesh.AllAreas))
     {
         currentPatrolPoint = hit.position;
         hasPatrolPoint = true;
+        patrolTimer = 0; 
     }
 }
+
 void PreformPatrol()
 {
     if (!hasPatrolPoint)
     {
         FindPatrolPoint();
-        patrolTimer = 0;
+        return;
     }
 
-    if(hasPatrolPoint)
+    if (hasPatrolPoint)
     {
         navAgent.SetDestination(currentPatrolPoint);
         patrolTimer += Time.deltaTime;
 
-        if(Vector3.Distance(transform.position, currentPatrolPoint) < 1.5f || patrolTimer > maxPatrolTime)
+        float distanceToTarget = Vector3.Distance(transform.position, currentPatrolPoint);
+
+
+        bool isStuck = (navAgent.velocity.sqrMagnitude < 0.1f && patrolTimer > 1.0f);
+
+        if (distanceToTarget < 1.5f || patrolTimer > maxPatrolTime || isStuck)
         {
             hasPatrolPoint = false;
         }
