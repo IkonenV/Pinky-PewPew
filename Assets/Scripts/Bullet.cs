@@ -16,7 +16,10 @@ public class Bullet : MonoBehaviour
             enemyHealth.TakeDamage(Damage);
 
         }
-        SoundFXManager.instance.PlaySoundFXClip(deathSound, transform, 1f);
+        else
+        {
+            SoundFXManager.instance.PlaySoundFXClip(deathSound, transform, 0.25f);
+        }
         DetachParticle(); 
         DetachParticle2();
         GameObject effect = Instantiate(deathEffect, transform.position, Quaternion.identity);
