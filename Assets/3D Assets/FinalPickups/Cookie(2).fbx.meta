@@ -3,7 +3,12 @@ guid: 776da634d3b004805856a83de1596df6
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CookieColor
+    second: {fileID: 2100000, guid: 2a6bca90e19b74f38ba68edc8babdcfe, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

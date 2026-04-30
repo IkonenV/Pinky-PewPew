@@ -3,7 +3,12 @@ guid: fe95677a62dbc48e5a3e7de2d04d2331
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CupCakeColor
+    second: {fileID: 2100000, guid: a4139746e86074d76b427f70f422d82e, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
