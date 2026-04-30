@@ -19,6 +19,7 @@ public class PlayerHealth : MonoBehaviour
     public AudioClip[] buttonSounds;
     public AudioClip loseSound;
     public AudioSource wingSource;
+    public bool gameOver;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -102,6 +103,7 @@ public class PlayerHealth : MonoBehaviour
         Time.timeScale = 0;
         gameOverObj.SetActive(true);
         playerScore.GameOver();
+        gameOver = true;
     }
     public void TryAgain()
     {
@@ -123,6 +125,14 @@ public class PlayerHealth : MonoBehaviour
         yield return new WaitForSecondsRealtime(0.4f);
         Scene currentScene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(currentScene.name);
+    }
+    public void WingPause()
+    {
+        wingSource.Stop();
+    }
+    public void WingResume()
+    {
+        wingSource.Play();
     }
 
 }

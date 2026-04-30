@@ -36,6 +36,9 @@ public class BigSpider : MonoBehaviour
     public bool stunned;
     float patrolTimer;
     public float maxPatrolTime = 5f;
+        PauseMenu pauseMenu;
+    PlayerHealth playerHealth;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
@@ -48,11 +51,17 @@ public class BigSpider : MonoBehaviour
             }
         }
         enemyHealth = GetComponent<EnemyHealth>();
+                pauseMenu = GameObject.FindGameObjectWithTag("GameManager").GetComponent<PauseMenu>();
+        playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
     }
 
     // Update is called once per frame
     void Update()
     {
+                if(pauseMenu.paused == true || playerHealth.gameOver == true)
+        {
+            movementAudioSource.Stop();
+        }
         DetectPlayer();
         UpdateBehaviourState();
         HandleMovementSound();
@@ -85,7 +94,7 @@ public class BigSpider : MonoBehaviour
     }
     void HandleMovementSound()
 {
-    if (movementAudioSource == null) return;
+    if (movementAudioSource == null ) return;
 
     if (navAgent.velocity.sqrMagnitude > 0.1f && !stunned && enemyHealth.Dead == false)
     {
@@ -165,8 +174,6 @@ void PreformPatrol()
         if(playerTransform != null)
         {
             transform.LookAt(playerTransform);
-
-            if(playingWalkSound)
 
             if (!isOnAttackCooldown)
             {

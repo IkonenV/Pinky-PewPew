@@ -8,17 +8,19 @@ public class PauseMenu : MonoBehaviour
     public GameObject menuObj;
     public AudioClip[] buttonSounds;
     public AudioClip pauseSound;
+    PlayerHealth playerHealth;
 
     void Start()
     {
         menuObj = GameObject.FindGameObjectWithTag("PauseMenu");
         menuObj.SetActive(false);
         paused = false;
+        playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Space))
         {
             if (!paused)
             {
@@ -37,6 +39,7 @@ public class PauseMenu : MonoBehaviour
         menuObj.SetActive(true);
         Time.timeScale = 0;
         paused = true;
+        playerHealth.WingPause();
     }
 
     
@@ -47,6 +50,7 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1;
         paused = false;
         PlayerPrefs.Save();
+        playerHealth.WingResume();
     }
     public void ToMenu()
     {

@@ -859,7 +859,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -2713,6 +2713,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0.2026664
       objectReference: {fileID: 0}
+    - target: {fileID: -8829238504264855342, guid: b4e369450840e47fdbebcd0a94140aef, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b4e369450840e47fdbebcd0a94140aef, type: 3}
       propertyPath: m_LocalPosition.x
       value: 552.843
@@ -2765,6 +2769,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 86.46386
       objectReference: {fileID: 0}
+    - target: {fileID: -7386922717474147698, guid: b4e369450840e47fdbebcd0a94140aef, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -6936847444719714347, guid: b4e369450840e47fdbebcd0a94140aef, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: -26.236506
@@ -2789,6 +2797,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90.00233
       objectReference: {fileID: 0}
+    - target: {fileID: -6518416287933190140, guid: b4e369450840e47fdbebcd0a94140aef, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -6518416287933190140, guid: b4e369450840e47fdbebcd0a94140aef, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: ff6f545d260984a90876e9346aa81c3a, type: 2}
     - target: {fileID: -6026348338977552228, guid: b4e369450840e47fdbebcd0a94140aef, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: -43.37656
@@ -2848,6 +2864,10 @@ PrefabInstance:
     - target: {fileID: -3961648502624603072, guid: b4e369450840e47fdbebcd0a94140aef, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90.00122
+      objectReference: {fileID: 0}
+    - target: {fileID: -3939689613879527591, guid: b4e369450840e47fdbebcd0a94140aef, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -3915082297789976812, guid: b4e369450840e47fdbebcd0a94140aef, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2961,6 +2981,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -36.74361
       objectReference: {fileID: 0}
+    - target: {fileID: 2313877837151514810, guid: b4e369450840e47fdbebcd0a94140aef, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2313877837151514810, guid: b4e369450840e47fdbebcd0a94140aef, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: dcdee9be9aa784a74a26b01aa82409e6, type: 2}
+    - target: {fileID: 2313877837151514810, guid: b4e369450840e47fdbebcd0a94140aef, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 2257675f85e864569aa9c64ae6791a21, type: 2}
     - target: {fileID: 2580684961577615936, guid: b4e369450840e47fdbebcd0a94140aef, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: -51.5904
@@ -3341,7 +3373,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -4182,7 +4214,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}

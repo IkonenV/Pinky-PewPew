@@ -83,7 +83,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   patrolRadius: 10
-  attackCooldown: 1
+  attackCooldown: 1.3
   forwardShotForce: 14.5
   verticalShotForce: 2
   visionRange: 10

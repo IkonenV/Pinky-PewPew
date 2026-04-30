@@ -36,6 +36,8 @@ public class BasicSpider : MonoBehaviour
     public float maxPatrolTime = 5f;
     public AudioSource movementAudioSource;
     public float walkPitchRange = 0.2f;
+    PauseMenu pauseMenu;
+    PlayerHealth playerHealth;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
@@ -48,11 +50,17 @@ public class BasicSpider : MonoBehaviour
             }
         }
         enemyHealth = GetComponent<EnemyHealth>();
+        pauseMenu = GameObject.FindGameObjectWithTag("GameManager").GetComponent<PauseMenu>();
+        playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
     }
 
     // Update is called once per frame
     void Update()
     {
+                if(pauseMenu.paused == true || playerHealth.gameOver == true)
+        {
+            movementAudioSource.Stop();
+        }
         DetectPlayer();
         UpdateBehaviourState();
         HandleMovementSound();
@@ -85,7 +93,8 @@ public class BasicSpider : MonoBehaviour
     }
     void HandleMovementSound()
 {
-    if (movementAudioSource == null) return;
+    
+    if (movementAudioSource == null ) return;
 
     if (navAgent.velocity.sqrMagnitude > 0.1f && !stunned && enemyHealth.Dead == false)
     {
