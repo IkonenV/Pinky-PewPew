@@ -161,7 +161,6 @@ void PreformPatrol()
     void PerformAttack()
     {
         navAgent.SetDestination(transform.position);
-        playingWalkSound = false;
 
         if(playerTransform != null)
         {
